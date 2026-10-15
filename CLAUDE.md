@@ -42,7 +42,7 @@ vendor, supplier, product, deal, discount, affordable luxury, generic, boring.
 The Claude Design pass (2026-10-15) is built in: arched photos
 (`<Photo arch>`), before/after switch plates, swipeable collections, the
 "25" closing, step details and the story card, per-field form errors, and
-your signature on the confirmations. Claude Design exports are a blueprint:
+Sara's signature on the confirmations. Claude Design exports are a blueprint:
 rebuild them INTO this app (keep the forms, database, email and the one-file
 copy). Never drop an export in as-is: its forms would not save.
 
