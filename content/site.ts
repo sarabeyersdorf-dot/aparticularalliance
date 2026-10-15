@@ -65,24 +65,24 @@ export const photos = {
     alt: `A plain plastic light switch plate`,
   },
   after: {
-    file: ``,
+    file: `after-walnut-switch-plate.jpg`,
     shot: `A hand-carved walnut switch plate, straight on`,
-    alt: `A hand-carved walnut switch plate`,
+    alt: `A hand-carved walnut switch plate with brass screws on a plaster wall`,
   },
   alliance: {
-    file: ``,
+    file: `alliance-woodworker.jpg`,
     shot: `A maker's hands at a workbench, wood shavings and hand tools, warm side light`,
-    alt: `A maker's hands at a workbench among wood shavings and hand tools`,
+    alt: `A woodworker's hands pushing a hand plane along a walnut board, shavings curling across the bench`,
   },
   walkthrough: {
-    file: ``,
+    file: `walkthrough.jpg`,
     shot: `Sara in a client's entry, notebook in hand, looking at a door lever`,
-    alt: `Sara Cooper in a client's entry with a notebook, looking closely at a door lever`,
+    alt: `A woman in a linen jacket, notebook in hand, reaching for a brass door lever in a sunlit entry`,
   },
   makers: {
-    file: ``,
+    file: `makers-potter.jpg`,
     shot: `A potter at the wheel in a small foothill studio, clay on the hands, face out of frame`,
-    alt: `A potter's clay-covered hands at the wheel in a small studio`,
+    alt: `A potter's clay-covered hands shaping a tall vessel on the wheel`,
   },
 };
 
@@ -93,6 +93,13 @@ export const collections = [
     name: `Gilt & Grain`,
     mood: `The touchpoints.`,
     description: `Warm brass and hand-finished wood: cabinet pulls, door levers, switch plates, house numbers.`,
+    // The Home page card ("Choose a feeling").
+    cardPhoto: {
+      file: ``,
+      shot: `A hand-forged brass cabinet pull on a hand-oiled white oak drawer, warm morning light`,
+      alt: `A hand-forged brass cabinet pull on a white oak drawer front`,
+    },
+    // The Collections page.
     photo: {
       file: ``,
       shot: `Brass cabinet pulls and a door lever on hand-finished oak, close and warm`,
@@ -104,6 +111,13 @@ export const collections = [
     name: `Ore & Oak`,
     mood: `Gold Country, made by hand.`,
     description: `Forged iron, reclaimed oak, native stone from Sierra foothill makers.`,
+    // The Home page card ("Choose a feeling").
+    cardPhoto: {
+      file: ``,
+      shot: `A hand-forged black iron hook on a reclaimed oak beam, fieldstone wall behind`,
+      alt: `A hand-forged iron hook on a weathered oak beam beside a stone wall`,
+    },
+    // The Collections page.
     photo: {
       file: ``,
       shot: `A forged iron fireplace set against native foothill stone and reclaimed oak`,
@@ -115,10 +129,17 @@ export const collections = [
     name: `Brass & Burl`,
     mood: `The statement.`,
     description: `Sculptural lighting, rare figured woods, often commissioned from scratch.`,
+    // The Home page card ("Choose a feeling").
+    cardPhoto: {
+      file: `brass-and-burl-pendant.jpg`,
+      shot: `A sculptural brass pendant glowing above a figured burl dining table, evening`,
+      alt: `A hand-hammered brass pendant glowing above a live-edge burl wood table`,
+    },
+    // The Collections page.
     photo: {
       file: ``,
       shot: `A sculptural brass chandelier above a figured burl-wood table, evening light`,
-      alt: `A sculptural brass chandelier above a burl-wood table in evening light`,
+      alt: `A hand-hammered brass pendant glowing above a live-edge burl wood table`,
     },
   },
   {
@@ -126,6 +147,13 @@ export const collections = [
     name: `Gilt & Loam`,
     mood: `Earth, refined.`,
     description: `Hand-thrown ceramics, plaster finishes, textured walls, pottery lamps.`,
+    // The Home page card ("Choose a feeling").
+    cardPhoto: {
+      file: ``,
+      shot: `A hand-thrown terracotta lamp with a linen shade against blush lime plaster`,
+      alt: `A hand-thrown ceramic lamp with a linen shade against a blush plaster wall`,
+    },
+    // The Collections page.
     photo: {
       file: ``,
       shot: `Hand-thrown ceramic vessels and a pottery lamp in front of a textured plaster wall`,
@@ -137,6 +165,13 @@ export const collections = [
     name: `Marble & Moss`,
     mood: `Stone and living things.`,
     description: `Carved stone vessels, bath and kitchen accents, planters.`,
+    // The Home page card ("Choose a feeling").
+    cardPhoto: {
+      file: ``,
+      shot: `A carved stone vessel with trailing maidenhair ferns on a honed stone ledge`,
+      alt: `A carved stone vessel spilling with maidenhair ferns on a stone ledge`,
+    },
+    // The Collections page.
     photo: {
       file: ``,
       shot: `A carved stone planter with ferns on a kitchen windowsill, cool morning light`,

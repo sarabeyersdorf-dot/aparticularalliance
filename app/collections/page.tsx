@@ -40,7 +40,7 @@ export default function CollectionsPage() {
             className="wrap grid scroll-mt-8 items-center gap-10 lg:grid-cols-2 lg:gap-24"
           >
             <Photo
-              photo={col.photo}
+              photo={col.photo.file ? col.photo : col.cardPhoto}
               reveal={0}
               arch
               ratio="aspect-[4/5]"

@@ -101,7 +101,7 @@ export default function Home() {
             <li key={c.slug} {...reveal(i)} className="w-[68%] shrink-0 snap-start sm:w-[40%] lg:w-auto">
               <Link href={`/collections#${c.slug}`} className="group group/photo block no-underline">
                 <Photo
-                  photo={c.photo}
+                  photo={c.cardPhoto.file ? c.cardPhoto : c.photo}
                   arch
                   ratio="aspect-[3/4]"
                   tone={TONES[i]}
