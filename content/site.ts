@@ -55,14 +55,14 @@ export const joinButton = `Join the Founding Client List`;
 // for people using screen readers; update it to match your real photo.
 export const photos = {
   hero: {
-    file: ``,
+    file: `gilt-and-grain-kitchen.jpg`,
     shot: `A handmade brass door lever on a plaster wall, soft morning light`,
-    alt: `A hand-finished brass door lever against a warm plaster wall`,
+    alt: `Hand-hammered brass pulls and a brass lever on white oak kitchen cabinetry in warm light`,
   },
   before: {
-    file: ``,
+    file: `before-plastic-switch-plate.jpg`,
     shot: `A plastic switch plate, straight on`,
-    alt: `A plain plastic light switch plate`,
+    alt: `A plain white plastic light switch plate on a flat white wall`,
   },
   after: {
     file: `after-walnut-switch-plate.jpg`,
@@ -101,9 +101,9 @@ export const collections = [
     },
     // The Collections page.
     photo: {
-      file: ``,
+      file: `gilt-and-grain-kitchen.jpg`,
       shot: `Brass cabinet pulls and a door lever on hand-finished oak, close and warm`,
-      alt: `Brass cabinet pulls and a door lever on hand-finished oak`,
+      alt: `Hand-hammered brass pulls and a brass lever on white oak kitchen cabinetry in warm light`,
     },
   },
   {
@@ -137,9 +137,9 @@ export const collections = [
     },
     // The Collections page.
     photo: {
-      file: ``,
+      file: `brass-and-burl-chandelier.jpg`,
       shot: `A sculptural brass chandelier above a figured burl-wood table, evening light`,
-      alt: `A hand-hammered brass pendant glowing above a live-edge burl wood table`,
+      alt: `A sculptural brass ribbon chandelier glowing above a figured burl wood dining table at dusk`,
     },
   },
   {
@@ -155,9 +155,9 @@ export const collections = [
     },
     // The Collections page.
     photo: {
-      file: ``,
+      file: `gilt-and-loam-vessels.jpg`,
       shot: `Hand-thrown ceramic vessels and a pottery lamp in front of a textured plaster wall`,
-      alt: `Hand-thrown ceramic vessels and a pottery lamp against a textured plaster wall`,
+      alt: `A pottery lamp and hand-thrown vessels on an oak console against a terracotta plaster wall`,
     },
   },
   {

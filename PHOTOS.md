@@ -1,6 +1,6 @@
 # Photo shot list
 
-Eleven photos. Shoot in soft, natural light, and avoid any visible brand
+Fifteen photos, all in place as of 2026-10-15. To swap one, see README step 2. Shoot in soft, natural light, and avoid any visible brand
 names or logos.
 
 **Size:** at least 2000 px on the long side; JPG is fine. Shoot portrait
