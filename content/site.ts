@@ -119,9 +119,9 @@ export const collections = [
     },
     // The Collections page.
     photo: {
-      file: ``,
+      file: `ore-and-oak-fireplace.jpg`,
       shot: `A forged iron fireplace set against native foothill stone and reclaimed oak`,
-      alt: `A forged iron fireplace set against native stone and reclaimed oak`,
+      alt: `A hand-forged iron fireplace tool set beside a fieldstone hearth with a reclaimed oak mantel and a fire burning`,
     },
   },
   {
