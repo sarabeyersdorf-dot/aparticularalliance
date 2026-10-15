@@ -60,7 +60,28 @@ export default function MakerForm() {
       </div>
       <TextField name="full_name" label={F.name.label} required autoComplete="name" error={errs.full_name} onEdit={clear} />
       <TextField name="email" label={F.email.label} required type="email" inputMode="email" autoComplete="email" error={errs.email} onEdit={clear} />
-      <TextField name="craft" label={F.craft.label} required hint={F.craft.hint} error={errs.craft} onEdit={clear} />
+      <div>
+        <TextField name="craft" label={F.craft.label} required hint={F.craft.hint} error={errs.craft} onEdit={clear} />
+        <ul className="mt-3 flex flex-wrap gap-2" aria-label={F.craft.hint}>
+          {F.craft.suggestions.map((s) => (
+            <li key={s}>
+              <button
+                type="button"
+                className="min-h-9 border border-line bg-paper px-3 py-1 text-sm text-muted transition-colors hover:border-brass hover:text-ink"
+                onClick={() => {
+                  const box = document.getElementById('craft') as HTMLInputElement | null;
+                  if (!box) return;
+                  box.value = s;
+                  clear('craft');
+                  box.focus();
+                }}
+              >
+                {s}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
       <TextField name="location" label={F.location.label} required hint={F.location.hint} autoComplete="address-level2" error={errs.location} onEdit={clear} />
       <TextField name="website" label={F.website.label} placeholder="instagram.com/yourstudio" className="sm:col-span-2" />
       <TextField name="note" label={F.note.label} hint={F.note.hint} multiline className="sm:col-span-2" />

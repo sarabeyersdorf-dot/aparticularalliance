@@ -114,6 +114,36 @@ your registrar (same place as step 5). When Resend says **Verified**, change
 `NOTIFY_EMAIL_FROM` to `A Particular Alliance <hello@aparticularalliance.com>`
 and redeploy.
 
+## 7. Adding a pattern to the Library (Surfaces page)
+
+The Library on `/surfaces` reads from a table in Supabase, so you can add,
+change or hide patterns without touching code. Changes show on the site
+within about a minute.
+
+**Add a pattern**
+1. Go to **supabase.com** → open **A Particular Alliance**.
+2. **Upload the swatch:** left sidebar → **Storage** → bucket
+   **surface-patterns** → **Upload file**. Use a square image, about
+   1200 × 1200, JPG or PNG. When it's uploaded, click the file → **Get URL**
+   → copy the link.
+3. **Add the row:** left sidebar → **Table Editor** → **surface_patterns** →
+   **Insert → Insert row**, and fill in:
+   - `name`: the pattern name, e.g. Foothill Quail
+   - `colorway`: e.g. Sage and cream
+   - `type`: exactly one of `wallpaper`, `tile`, `mural`, `plaster`
+   - `maker_name`: the maker or artist (leave empty to hide)
+   - `image_url`: paste the link from step 2
+   - `sort_order`: lower numbers show first (the starting six use 10, 20, 30…)
+   - `is_published`: ticked to show it
+4. Click **Save**.
+
+**Hide a pattern** without deleting it: open its row and untick
+`is_published`. Tick it again to bring it back.
+
+**Change a pattern:** click into any cell, edit, press Enter.
+
+Leave `id` and `created_at` alone; they fill themselves in.
+
 ## For developers
 
 Next.js 16 (App Router) + Tailwind CSS 4, deployed on Vercel. Forms post to

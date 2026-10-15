@@ -2,8 +2,19 @@
 // Add the file to public/photos/ and its name in content/site.ts → photos.
 import Image from 'next/image';
 import { reveal as revealProps } from '@/lib/reveal';
+import { conceptCaption } from '@/content';
 
-export type PhotoSpec = { file: string; shot: string; alt: string };
+export type PhotoSpec = { file: string; shot: string; alt: string; concept?: boolean };
+
+// "A look we can create": marks a rendering so it is never read as a
+// finished client project. Shown only once a real image is in place.
+function ConceptCaption() {
+  return (
+    <span className="pointer-events-none absolute bottom-3 left-3 z-10 bg-paper/85 px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.16em] text-muted">
+      {conceptCaption}
+    </span>
+  );
+}
 
 const TONES = {
   plaster: 'bg-plaster',
@@ -21,6 +32,7 @@ export default function Photo({
   sizes = '(min-width: 1024px) 50vw, 100vw',
   className = '',
   reveal,
+  labelTop = false,
 }: {
   photo: PhotoSpec;
   ratio?: string;
@@ -31,6 +43,8 @@ export default function Photo({
   className?: string;
   /** Fade in on scroll, at this step of its group. */
   reveal?: number;
+  /** Put the "Photo to come" label at the top (when text sits over the bottom). */
+  labelTop?: boolean;
 }) {
   // The arch: a fully rounded top, square bottom, like a doorway.
   const shape = arch ? 'rounded-t-[999px]' : '';
@@ -45,6 +59,7 @@ export default function Photo({
         <div className={zoom}>
           <Image src={`/photos/${photo.file}`} alt={photo.alt} fill sizes={sizes} priority={priority} className="object-cover" />
         </div>
+        {photo.concept && <ConceptCaption />}
       </div>
     );
   }
@@ -53,7 +68,7 @@ export default function Photo({
       {...r}
       role="img"
       aria-label={`Photo coming soon: ${photo.alt}`}
-      className={`group/photo relative flex items-end overflow-hidden ${ratio} ${shape} ${className}`}
+      className={`group/photo relative flex ${labelTop ? 'items-start' : 'items-end'} overflow-hidden ${ratio} ${shape} ${className}`}
     >
       <div
         aria-hidden

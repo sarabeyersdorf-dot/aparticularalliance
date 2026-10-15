@@ -40,6 +40,7 @@ export const site = {
 export const nav = [
   { label: `The Alliance`, href: `/the-alliance` },
   { label: `Collections`, href: `/collections` },
+  { label: `Surfaces`, href: `/surfaces` },
   { label: `How it works`, href: `/how-it-works` },
   { label: `Makers`, href: `/makers` },
 ];
@@ -53,6 +54,10 @@ export const joinButton = `Join the Founding Client List`;
 // To add a photo: put the file in the folder  public/photos/  and type its file
 // name in `file`, e.g.  file: `hero.jpg`.  The `alt` text describes the photo
 // for people using screen readers; update it to match your real photo.
+// `concept: true` adds the small caption "A look we can create", so a rendering
+// is never mistaken for a finished client project. Delete that line once the
+// photo is of real, finished work.
+export const conceptCaption = `A look we can create`;
 export const photos = {
   hero: {
     file: `hero-b.jpg`,
@@ -86,7 +91,7 @@ export const photos = {
   },
 };
 
-// ── The five collections ─────────────────────────────────────────────────────
+// ── The six collections ──────────────────────────────────────────────────────
 export const collections = [
   {
     slug: `gilt-and-grain`,
@@ -178,6 +183,27 @@ export const collections = [
       alt: `A carved stone planter of ferns on a kitchen windowsill beside a carved stone fruit bowl`,
     },
   },
+  {
+    slug: `paper-and-plaster`,
+    name: `Paper & Plaster`,
+    mood: `Surfaces, reconsidered.`,
+    description: `Wallpapered ceilings, handmade tile, murals and hand-troweled plaster in the places builders leave blank.`,
+    // This collection has its own page.
+    href: `/surfaces`,
+    linkLabel: `See Surfaces`,
+    cardPhoto: {
+      file: `paper-and-plaster.jpg`,
+      shot: `A powder room with a softly patterned wallpapered ceiling and limewashed walls`,
+      alt: `A walk-in closet of warm wood shelving beneath a botanical wallpapered ceiling`,
+      concept: true,
+    },
+    photo: {
+      file: `paper-and-plaster.jpg`,
+      shot: `A powder room with a softly patterned wallpapered ceiling and limewashed walls`,
+      alt: `A walk-in closet of warm wood shelving beneath a botanical wallpapered ceiling`,
+      concept: true,
+    },
+  },
 ];
 
 // ── Home page ────────────────────────────────────────────────────────────────
@@ -220,9 +246,20 @@ When they're made by hand, a house starts to feel like it was made for you.`,
     link: `Read about the Alliance`,
   },
   collections: {
-    eyebrow: `Five collections`,
+    eyebrow: `Six collections`,
     heading: `Each one a room *of its own.*`,
-    swipeHint: `Swipe to see all five`,
+    swipeHint: `Swipe to see all six`,
+  },
+  // The full-width ceiling band, between the collections and the closing.
+  fifthWall: {
+    line: `Look up. The fifth wall *is waiting.*`,
+    link: `Discover Surfaces`,
+    photo: {
+      file: `home-fifth-wall.jpg`,
+      shot: `Looking straight up at a richly wallpapered ceiling above a dining table, a brass pendant hanging from its center. Wide`,
+      alt: `A dining room beneath a ceiling painted as a soft sunset sky, a chandelier at its center`,
+      concept: true,
+    },
   },
   closing: {
     stat: `25`,
@@ -263,14 +300,105 @@ At the same time, I kept meeting extraordinary makers, often just a few miles fr
 // ── Collections page ─────────────────────────────────────────────────────────
 export const collectionsPage = {
   title: `Collections`,
-  description: `Five collections of handmade, one-of-a-kind pieces for the home: Gilt & Grain, Ore & Oak, Brass & Burl, Gilt & Loam and Marble & Moss.`,
-  eyebrow: `Five collections`,
+  description: `Six collections of handmade, one-of-a-kind pieces for the home: Gilt & Grain, Ore & Oak, Brass & Burl, Gilt & Loam, Marble & Moss and Paper & Plaster.`,
+  eyebrow: `Six collections`,
   heading: `Choose by *feeling.*`,
   lede: `Each collection is a mood, so you can choose by feeling instead of by catalog number.`,
   numberLabel: `Collection`,
   closing: {
     heading: `Anything but *beige.*`,
     body: `Founding clients get first pick of the founding collection.`,
+  },
+};
+
+// ── Surfaces page (/surfaces) ────────────────────────────────────────────────
+export const surfacesPage = {
+  // What Google and link previews show.
+  title: `Wallpapered Ceilings, Handmade Tile & Plaster | A Particular Alliance`,
+  description: `Wallpaper, tile, murals and plaster in unexpected places, starting with the ceiling. Sourced from makers and installed for you in California's Gold Country and Sacramento area.`,
+  eyebrow: `Surfaces`,
+  heading: `The fifth *wall.*`,
+  lede: `Most homes have one ceiling color: white. I think that's a missed opportunity. Surfaces brings pattern, texture and color to the places nobody expects, starting with the one everyone forgets to look up at.`,
+  heroPhoto: {
+    file: `surfaces-hero.jpg`,
+    shot: `Looking up into a room with a wallpapered ceiling in a soft botanical pattern, warm daylight. Portrait`,
+    alt: `A sitting room ceiling painted black with fine gold linework, a glass chandelier hanging at its center`,
+    concept: true,
+  },
+  intro: `Builder-grade homes are finished in flat paint and good intentions. Surfaces changes that, one wall, ceiling or stair at a time. Every paper, tile and finish comes from a maker or artist I've chosen, and every installation is done by trades I trust.`,
+  offer: {
+    heading: `What *we do*`,
+    cards: [
+      {
+        title: `The Fifth Wall`,
+        line: `Wallpapered and painted ceilings that change how a room feels the moment you walk in.`,
+        photo: { file: `surfaces-fifth-wall.jpg`, shot: `A dining room with a patterned wallpapered ceiling`, alt: `A sunlit garden room with botanical wallpaper running up the walls and across the ceiling`, concept: true },
+      },
+      {
+        title: `Unexpected Places`,
+        line: `Powder rooms, closets, stair risers, the backs of bookshelves, laundry rooms, door panels.`,
+        photo: { file: `surfaces-unexpected-places.jpg`, shot: `Built-in bookshelves backed with a bold patterned paper`, alt: `A laundry room papered in a bold dark botanical print above a farmhouse sink`, concept: true },
+      },
+      {
+        title: `Handmade Tile`,
+        line: `Hand-glazed and encaustic tile for fireplaces, backsplashes, stairs and feature walls.`,
+        photo: { file: `surfaces-handmade-tile.jpg`, shot: `A fireplace surround in hand-glazed tile`, alt: `A staircase with each riser faced in a different patterned terracotta tile`, concept: true },
+      },
+      {
+        title: `Murals & Large Prints`,
+        line: `Original, large-scale artwork made for one wall in one home.`,
+        photo: { file: `surfaces-murals.jpg`, shot: `A hand-painted landscape mural across one wall of a sitting room`, alt: `A double-height living room wall painted with an oversized botanical leaf mural`, concept: true },
+      },
+      {
+        title: `Plaster & Limewash`,
+        line: `Hand-troweled finishes with depth, movement and the marks of the maker.`,
+        photo: { file: `surfaces-plaster.jpg`, shot: `A hand-troweled limewash wall in warm clay tones, raking light`, alt: `A hand-troweled limewash archway glowing in warm afternoon light`, concept: true },
+      },
+      {
+        title: `Relief & Wall Art`,
+        line: `Sculptural pieces that turn a blank wall into the room's focal point.`,
+        photo: { file: `surfaces-relief.jpg`, shot: `A sculptural plaster relief panel on an entry wall`, alt: `A sculptural wall piece of layered wooden waves above a console in an entry`, concept: true },
+      },
+    ],
+  },
+  where: {
+    heading: `Where *it goes*`,
+    // icon: one of ceiling, powder, entry, stairs, closet, shelves, laundry, door, fireplace
+    places: [
+      { label: `Ceilings`, icon: `ceiling` },
+      { label: `Powder rooms`, icon: `powder` },
+      { label: `Entries`, icon: `entry` },
+      { label: `Stair risers`, icon: `stairs` },
+      { label: `Closets`, icon: `closet` },
+      { label: `Bookshelf backs`, icon: `shelves` },
+      { label: `Laundry rooms`, icon: `laundry` },
+      { label: `Door panels`, icon: `door` },
+      { label: `Fireplace surrounds`, icon: `fireplace` },
+      { label: `Ceilings again (it bears repeating)`, icon: `ceiling` },
+    ],
+  },
+  library: {
+    eyebrow: `The Library`,
+    heading: `Papers, tiles *and finishes.*`,
+    intro: `A few of the patterns I keep coming back to. At your walk-through you'll see and touch the real thing.`,
+    empty: `New patterns are on their way.`,
+    // How each type reads on the page.
+    types: { wallpaper: `Wallpaper`, tile: `Tile`, mural: `Mural`, plaster: `Plaster` },
+    swatchPlaceholder: `Swatch to come`,
+  },
+  how: {
+    heading: `How *it works*`,
+    steps: [
+      { name: `The walk-through.`, body: `I look for the surfaces that are quietly doing nothing.` },
+      { name: `The samples.`, body: `You see and touch real paper, tile and plaster samples in your own light, not on a screen.` },
+      { name: `One clear price.`, body: `Materials, prep and installation in a single number.` },
+      { name: `The install.`, body: `Our trades handle prep, hanging, tiling and finishing. You come home to it done.` },
+    ],
+  },
+  closing: {
+    heading: `Start with *the ceiling.*`,
+    body: `Tell me a little about your home, and I'll bring samples to your walk-through.`,
+    button: `Ask about Surfaces`,
   },
 };
 
@@ -347,8 +475,20 @@ export const makersPage = {
       email: { label: `Email`, error: `Please add your email.` },
       craft: {
         label: `Your craft`,
-        hint: `For example: blacksmith, ceramicist, woodturner, plasterer.`,
+        hint: `Tap one below, or type your own.`,
         error: `Please tell me your craft.`,
+        // Tapping one of these fills in the box.
+        suggestions: [
+          `Blacksmithing and metalwork`,
+          `Woodworking`,
+          `Ceramics and pottery`,
+          `Stone carving`,
+          `Lighting`,
+          `Wallpaper or surface design`,
+          `Tile and ceramics`,
+          `Mural and decorative painting`,
+          `Plaster and limewash`,
+        ],
       },
       location: { label: `Where you work`, hint: `Town or region is fine.`, error: `Please tell me where you work.` },
       website: { label: `Website or Instagram` },
@@ -383,9 +523,12 @@ export const waitlistPage = {
       city: { label: `City or area`, error: `Please add your city or area.` },
       homeType: { label: `Type of home`, note: `pick one`, error: `Please choose a type of home.` },
       bothers: { label: `What bothers you most?`, note: `optional, pick any` },
+      surfaces: { label: `Any surfaces you're curious about?`, note: `optional, pick any` },
       timing: { label: `Timing`, note: `pick one`, error: `Please choose a timing.` },
       heardFrom: { label: `How did you hear about us?` },
     },
+    // Shown when someone arrives from "Ask about Surfaces".
+    surfacesNote: `I've marked wallpaper and ceilings for you below. Change anything you like.`,
     submit: `Join the list`,
     sending: `Sending…`,
     successHeading: `You're on *the list.*`,
@@ -409,7 +552,8 @@ export const formText = {
 // so ask Claude Code before editing them.
 export const choices = {
   homeType: [`New construction`, `Existing home`, `Second home`, `Short-term rental`],
-  bothers: [`Lighting`, `Hardware and switch plates`, `Vents and registers`, `Color and texture`, `A whole room`],
+  bothers: [`Lighting`, `Hardware and switch plates`, `Vents and registers`, `Color and texture`, `A whole room`, `Wallpaper, tile or ceilings`],
+  surfaces: [`Ceilings`, `Powder room`, `Entry`, `Stairs`, `Closet`, `Bookshelves`, `Laundry`, `Fireplace`, `Not sure yet`],
   timing: [`This season`, `In the next 6 months`, `Just curious`],
   heardFrom: [`Realtor or friend`, `Instagram`, `Facebook`, `Other`],
 } as const;

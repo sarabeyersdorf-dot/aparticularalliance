@@ -33,3 +33,31 @@ over `public/og.png`.
 
 **Logo:** the name is set as type in `components/Wordmark.tsx`. When a logo
 exists, Claude Code can swap it in everywhere in one change.
+
+## Surfaces (added 2026-10-16)
+
+All Surfaces images are concept renderings and carry the small caption
+**"A look we can create"**. When you have a photo of a real, finished
+project, swap it in and delete the `concept: true` line next to it in
+`content/site.ts` so the caption disappears.
+
+| File in `public/photos/` | Where it appears | Shape and minimum size |
+|---|---|---|
+| `surfaces-hero.jpg` | Surfaces page, top (arch) | Portrait 4:5, 1600 × 2000 |
+| `surfaces-fifth-wall.jpg` | "The Fifth Wall" card | Portrait 4:5, 1200 × 1500 |
+| `surfaces-unexpected-places.jpg` | "Unexpected Places" card | Portrait 4:5, 1200 × 1500 |
+| `surfaces-handmade-tile.jpg` | "Handmade Tile" card | Portrait 4:5, 1200 × 1500 |
+| `surfaces-murals.jpg` | "Murals & Large Prints" card | Portrait 4:5, 1200 × 1500 |
+| `surfaces-plaster.jpg` | "Plaster & Limewash" card | Portrait 4:5, 1200 × 1500 |
+| `surfaces-relief.jpg` | "Relief & Wall Art" card | Portrait 4:5, 1200 × 1500 |
+| `paper-and-plaster.jpg` | Paper & Plaster collection (Home card + Collections page) | Portrait 4:5, 1600 × 2000 |
+| `home-fifth-wall.jpg` | Home page, "Look up. The fifth wall is waiting." band | Wide 2:1, 2400 × 1200 (keep the ceiling in the top half) |
+
+The images now in place came from Dropbox → A Particular Alliance → Website
+Pics → Surfaces. They were exported at 944 pixels tall, which looks fine on
+phones but slightly soft on a large laptop screen. If your image tool can
+export larger (2000 pixels on the long side), re-export and send them.
+
+**Pattern swatches** for the Library are square, 1200 × 1200, flat and
+straight-on. They are added through Supabase, not here: see README, "Adding a
+pattern to the Library".

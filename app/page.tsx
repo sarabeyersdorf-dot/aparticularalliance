@@ -13,8 +13,8 @@ export const metadata = {
   alternates: { canonical: '/' },
 };
 
-const ROMAN = ['I', 'II', 'III', 'IV', 'V'];
-const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone'] as const;
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone', 'linen'] as const;
 
 export default function Home() {
   return (
@@ -104,7 +104,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Collections: swipe on a phone, a row of five on a laptop */}
+      {/* Collections: swipe on a phone, a row of six on a laptop */}
       <section aria-labelledby="collections" className="mt-28 sm:mt-40">
         <div {...reveal(0)} className="wrap">
           <p className="eyebrow">{home.collections.eyebrow}</p>
@@ -113,22 +113,22 @@ export default function Home() {
           </h2>
         </div>
         <ul
-          className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-px-6 px-6 pb-4 sm:scroll-px-10 sm:px-10 lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-5 lg:gap-6 lg:overflow-visible lg:px-10"
+          className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-px-6 px-6 pb-4 sm:scroll-px-10 sm:px-10 lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-6 lg:gap-5 lg:overflow-visible lg:px-10"
           aria-label={home.collections.eyebrow}
           data-reveal-row
         >
           {collections.map((c, i) => (
             <li key={c.slug} {...reveal(i)} className="w-[68%] shrink-0 snap-start sm:w-[40%] lg:w-auto">
-              <Link href={`/collections#${c.slug}`} className="group group/photo block no-underline">
+              <Link href={c.href ?? `/collections#${c.slug}`} className="group group/photo block no-underline">
                 <Photo
                   photo={c.cardPhoto.file ? c.cardPhoto : c.photo}
                   arch
                   ratio="aspect-[3/4]"
                   tone={TONES[i]}
-                  sizes="(min-width: 1024px) 20vw, 70vw"
+                  sizes="(min-width: 1024px) 17vw, 70vw"
                 />
-                <h3 className="display mt-5 text-2xl transition-colors group-hover:text-brass">{c.name}</h3>
-                <p className="mt-1 font-serif text-lg italic text-muted">{c.mood}</p>
+                <h3 className="display mt-5 text-2xl transition-colors group-hover:text-brass lg:text-[1.35rem] xl:text-2xl">{c.name}</h3>
+                <p className="mt-1 font-serif text-lg italic leading-snug text-muted">{c.mood}</p>
               </Link>
             </li>
           ))}
@@ -136,6 +136,27 @@ export default function Home() {
         <p className="wrap mt-4 text-sm text-muted lg:hidden" aria-hidden>
           {home.collections.swipeHint} →
         </p>
+      </section>
+
+      {/* The fifth wall: one full-width ceiling image, a line and a link. */}
+      <section aria-labelledby="fifth-wall" className="mt-28 sm:mt-40">
+        <Link href="/surfaces" className="group/photo relative block no-underline">
+          <Photo
+            photo={home.fifthWall.photo}
+            ratio="aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9]"
+            tone="olive"
+            sizes="100vw"
+            labelTop
+          />
+          <div className="absolute inset-x-0 bottom-0 flex justify-center px-6 pb-10 sm:pb-14">
+            <div {...reveal(0)} className="bg-paper/92 px-7 py-6 text-center sm:px-10 sm:py-8">
+              <h2 id="fifth-wall" className="display text-[2rem] sm:text-5xl">
+                <Emph text={home.fifthWall.line} />
+              </h2>
+              <span className="link mt-4 inline-block text-sm">{home.fifthWall.link} →</span>
+            </div>
+          </div>
+        </Link>
       </section>
 
       <ClosingCta

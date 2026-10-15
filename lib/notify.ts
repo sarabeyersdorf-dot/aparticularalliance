@@ -34,7 +34,9 @@ function build(kind: 'waitlist' | 'maker', row: Row) {
       : `${flag}New maker application: ${name} · ${show(row.craft)}`;
   const intro =
     kind === 'waitlist'
-      ? `Someone just joined the Founding Client List.`
+      ? row.interest === 'surfaces'
+        ? `Someone just joined the Founding Client List from the Surfaces page.`
+        : `Someone just joined the Founding Client List.`
       : `A maker just applied to join the Alliance.`;
   const fields: [string, unknown][] =
     kind === 'waitlist'
@@ -45,6 +47,7 @@ function build(kind: 'waitlist' | 'maker', row: Row) {
           ['City or area', row.city],
           ['Type of home', row.home_type],
           ['What bothers them most', row.bothers],
+          ['Surfaces they’re curious about', row.surfaces],
           ['Timing', row.timing],
           ['Heard about us', row.heard_from],
         ]

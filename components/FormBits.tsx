@@ -119,6 +119,7 @@ export function ChoiceGroup({
   required,
   error,
   onEdit,
+  defaultValues = [],
 }: {
   name: string;
   legend: string;
@@ -128,6 +129,8 @@ export function ChoiceGroup({
   required?: boolean;
   error?: string;
   onEdit?: (name: string) => void;
+  /** Options ticked when the form opens. */
+  defaultValues?: readonly string[];
 }) {
   return (
     <fieldset aria-describedby={error ? `${name}-error` : undefined} aria-invalid={error ? true : undefined}>
@@ -148,6 +151,7 @@ export function ChoiceGroup({
               type={multiple ? 'checkbox' : 'radio'}
               name={name}
               value={o}
+              defaultChecked={defaultValues.includes(o)}
               className="accent-[#7a5c2b]"
               onChange={() => onEdit?.(name)}
             />

@@ -25,18 +25,18 @@ export default function Header() {
           <Wordmark animate />
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-9 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-6 lg:flex xl:gap-9">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={pathname === item.href ? 'page' : undefined}
-              className="nav-link text-[0.82rem] uppercase tracking-[0.16em] text-muted no-underline transition-colors hover:text-ink aria-[current=page]:text-ink"
+              className="nav-link whitespace-nowrap text-[0.78rem] uppercase tracking-[0.14em] xl:text-[0.82rem] xl:tracking-[0.16em] text-muted no-underline transition-colors hover:text-ink aria-[current=page]:text-ink"
             >
               {item.label}
             </Link>
           ))}
-          <Link href={navCta.href} className="link text-[0.82rem] uppercase tracking-[0.16em]">
+          <Link href={navCta.href} className="link whitespace-nowrap text-[0.78rem] uppercase tracking-[0.14em] xl:text-[0.82rem] xl:tracking-[0.16em]">
             {navCta.label}
           </Link>
         </nav>

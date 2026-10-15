@@ -69,6 +69,25 @@ photo follows. A replacement hero needs the same shape: wide, with empty
 space on the left. Live at aparticularalliance.com since 2026-10-15
 (particularalliance.com and both www addresses redirect to it).
 
+## Surfaces (2026-10-16)
+- `/surfaces` (`app/surfaces/page.tsx`), all wording in `surfacesPage` in
+  `site.ts`. Nav item between Collections and How it works. Sixth collection
+  `paper-and-plaster` links to /surfaces (`href` on the collection). Home has
+  a full-width "fifth wall" band (`home.fifthWall`).
+- **The Library** reads `surface_patterns` (Supabase) via `lib/patterns.ts`;
+  the page revalidates every 60s. `anon` can SELECT published rows only (RLS),
+  nothing else. Images: Storage bucket `surface-patterns` (public) or a site
+  path like `/patterns/foothill-quail.jpg` (`public/patterns/`). Sara adds rows
+  in the dashboard (README step 7); there is no admin form on purpose.
+- Waitlist: `bothers` gained "Wallpaper, tile or ceilings"; new columns
+  `surfaces text[]` and `interest` ('surfaces' when they arrived from
+  "Ask about Surfaces", `?interest=surfaces`, which pre-ticks wallpaper and
+  ceilings). CHECK constraints mirror `choices` in `site.ts`.
+- Makers: craft is still free text; the suggestion buttons just fill the box.
+- `concept: true` on a photo shows "A look we can create" (`conceptCaption`).
+  Every Surfaces image is a rendering and must keep it until it's a real
+  finished project.
+
 ## Sandbox note
 Cloud sessions may be unable to reach `*.supabase.co`. Test forms against a
 local stand-in that records requests, and have Sara send one real signup

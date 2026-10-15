@@ -43,6 +43,8 @@ export function parseWaitlist(body: Body): Result<Record<string, unknown>> {
   if (!EMAIL.test(email)) return { ok: false, error: 'email' };
   const rawBothers = Array.isArray(body.bothers) ? body.bothers : [];
   const bothers = [...new Set(rawBothers.map((b) => oneOf(b, choices.bothers)).filter((b) => b !== null))];
+  const rawSurfaces = Array.isArray(body.surfaces) ? body.surfaces : [];
+  const surfaces = [...new Set(rawSurfaces.map((b) => oneOf(b, choices.surfaces)).filter((b) => b !== null))];
   return {
     ok: true,
     row: {
@@ -52,6 +54,8 @@ export function parseWaitlist(body: Body): Result<Record<string, unknown>> {
       city,
       home_type,
       bothers,
+      surfaces,
+      interest: body.interest === 'surfaces' ? 'surfaces' : null,
       timing,
       heard_from: oneOf(body.heard_from, choices.heardFrom),
       source_page: optional(body.source_page, 300),

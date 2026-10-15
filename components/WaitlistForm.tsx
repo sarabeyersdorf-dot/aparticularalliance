@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { choices, errors as messages, formText, waitlistPage } from '@/content';
 import Confirmation from './Confirmation';
 import { ChoiceGroup, ErrorSummary, Errors, TextField, checkRequired, focusFirst } from './FormBits';
@@ -13,6 +13,12 @@ const F = f.fields;
 export default function WaitlistForm() {
   const { status, error, submit } = useFormSubmit('/api/waitlist');
   const [errs, setErrs] = useState<Errors>({});
+  // Arrived from "Ask about Surfaces" (?interest=surfaces): tick wallpaper
+  // and ceilings, and record where they came from.
+  const [fromSurfaces, setFromSurfaces] = useState(false);
+  useEffect(() => {
+    setFromSurfaces(new URLSearchParams(window.location.search).get('interest') === 'surfaces');
+  }, []);
 
   if (status === 'done') {
     return (
@@ -51,6 +57,8 @@ export default function WaitlistForm() {
       city: data.get('city'),
       home_type: data.get('home_type'),
       bothers: data.getAll('bothers'),
+      surfaces: data.getAll('surfaces'),
+      interest: fromSurfaces ? 'surfaces' : null,
       timing: data.get('timing'),
       heard_from: data.get('heard_from'),
       ap_hp: data.get('ap_hp'),
@@ -74,7 +82,25 @@ export default function WaitlistForm() {
       </div>
 
       <ChoiceGroup name="home_type" legend={F.homeType.label} note={F.homeType.note} options={choices.homeType} required error={errs.home_type} onEdit={clear} />
-      <ChoiceGroup name="bothers" legend={F.bothers.label} note={F.bothers.note} options={choices.bothers} multiple />
+      {fromSurfaces && <p className="border-l-2 border-brass-soft pl-4 text-sm text-muted">{f.surfacesNote}</p>}
+      <ChoiceGroup
+        key={`bothers-${fromSurfaces}`}
+        name="bothers"
+        legend={F.bothers.label}
+        note={F.bothers.note}
+        options={choices.bothers}
+        multiple
+        defaultValues={fromSurfaces ? ['Wallpaper, tile or ceilings'] : []}
+      />
+      <ChoiceGroup
+        key={`surfaces-${fromSurfaces}`}
+        name="surfaces"
+        legend={F.surfaces.label}
+        note={F.surfaces.note}
+        options={choices.surfaces}
+        multiple
+        defaultValues={fromSurfaces ? ['Ceilings'] : []}
+      />
       <ChoiceGroup name="timing" legend={F.timing.label} note={F.timing.note} options={choices.timing} required error={errs.timing} onEdit={clear} />
 
       <div>

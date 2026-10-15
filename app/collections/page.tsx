@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { collections, collectionsPage as c } from '@/content';
 import { reveal } from '@/lib/reveal';
 import PageIntro from '@/components/PageIntro';
@@ -11,8 +12,8 @@ export const metadata = {
   openGraph: { title: c.title, description: c.description, url: '/collections' },
 };
 
-const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone'] as const;
-const ROMAN = ['I', 'II', 'III', 'IV', 'V'];
+const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone', 'linen'] as const;
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
 
 export default function CollectionsPage() {
   return (
@@ -56,6 +57,13 @@ export default function CollectionsPage() {
               </h2>
               <p className="mt-3 font-serif text-2xl italic text-muted">{col.mood}</p>
               <p className="mt-8 max-w-[40ch] text-lg text-muted">{col.description}</p>
+              {col.href && (
+                <p className="mt-8">
+                  <Link href={col.href} className="link">
+                    {col.linkLabel} →
+                  </Link>
+                </p>
+              )}
             </div>
           </section>
         ))}
