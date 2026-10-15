@@ -1,0 +1,9 @@
+export default function PageIntro({ eyebrow, heading, lede }: { eyebrow?: string; heading: string; lede: string }) {
+  return (
+    <div className="wrap pt-16 sm:pt-24">
+      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+      <h1 className="display mt-5 max-w-4xl text-[2.9rem] sm:text-7xl">{heading}</h1>
+      <p className="mt-7 max-w-[46ch] text-lg text-muted sm:text-xl">{lede}</p>
+    </div>
+  );
+}
