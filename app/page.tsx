@@ -7,14 +7,15 @@ import JoinButton from '@/components/JoinButton';
 import Paragraphs from '@/components/Paragraphs';
 import ClosingCta from '@/components/ClosingCta';
 import Emph from '@/components/Emph';
+import { PeekingFox } from '@/components/Doodles';
 
 export const metadata = {
   title: { absolute: `${site.name} · ${home.title}` },
   alternates: { canonical: '/' },
 };
 
-const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
-const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone', 'linen'] as const;
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone', 'linen', 'plaster'] as const;
 
 export default function Home() {
   return (
@@ -104,7 +105,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Collections: swipe on a phone, a row of six on a laptop */}
+      {/* Collections: swipe on a phone, a row of seven on a laptop */}
       <section aria-labelledby="collections" className="mt-28 sm:mt-40">
         <div {...reveal(0)} className="wrap">
           <p className="eyebrow">{home.collections.eyebrow}</p>
@@ -113,7 +114,7 @@ export default function Home() {
           </h2>
         </div>
         <ul
-          className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-px-6 px-6 pb-4 sm:scroll-px-10 sm:px-10 lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-6 lg:gap-5 lg:overflow-visible lg:px-10"
+          className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-px-6 px-6 pb-4 sm:scroll-px-10 sm:px-10 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-7 lg:gap-5 lg:overflow-visible lg:px-10"
           aria-label={home.collections.eyebrow}
           data-reveal-row
         >
@@ -125,7 +126,7 @@ export default function Home() {
                   arch
                   ratio="aspect-[3/4]"
                   tone={TONES[i]}
-                  sizes="(min-width: 1024px) 17vw, 70vw"
+                  sizes="(min-width: 1024px) 15vw, 70vw"
                 />
                 <h3 className="display mt-5 text-2xl transition-colors group-hover:text-brass lg:text-[1.35rem] xl:text-2xl">{c.name}</h3>
                 <p className="mt-1 font-serif text-lg italic leading-snug text-muted">{c.mood}</p>
@@ -155,6 +156,24 @@ export default function Home() {
               </h2>
               <span className="link mt-4 inline-block text-sm">{home.fifthWall.link} →</span>
             </div>
+          </div>
+        </Link>
+      </section>
+
+      {/* Mischief & Mortar: one small, playful band. */}
+      <section aria-labelledby="mischief-band" className="wrap mt-28 sm:mt-40">
+        <Link href="/mischief" className="group group/photo mx-auto grid max-w-3xl items-center gap-8 no-underline sm:grid-cols-[minmax(0,15rem)_1fr] sm:gap-12">
+          <div className="relative mx-auto w-full max-w-[15rem]">
+            <PeekingFox className="absolute -top-[2.6rem] left-6 z-10 h-12 w-[5.5rem] text-cherry" />
+            <Photo photo={home.mischief.photo} reveal={0} ratio="aspect-square" tone="plaster" sizes="240px" />
+          </div>
+          <div {...reveal(1)} className="text-center sm:text-left">
+            <h2 id="mischief-band" className="display text-[2rem] sm:text-[2.6rem] [&_em]:text-cherry">
+              <Emph text={home.mischief.line} />
+            </h2>
+            <span className="mt-4 inline-block text-sm text-cherry underline decoration-cherry-soft underline-offset-[6px] transition-colors group-hover:text-ink">
+              {home.mischief.link} →
+            </span>
           </div>
         </Link>
       </section>

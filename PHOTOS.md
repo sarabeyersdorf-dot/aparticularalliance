@@ -61,3 +61,36 @@ export larger (2000 pixels on the long side), re-export and send them.
 **Pattern swatches** for the Library are square, 1200 × 1200, flat and
 straight-on. They are added through Supabase, not here: see README, "Adding a
 pattern to the Library".
+
+## Mischief & Mortar (added 2026-10-16)
+
+Every Mischief image is a concept rendering for now, so each carries the
+small caption **"A look we can create"**. Put them in Dropbox → A Particular
+Alliance → Website Pics → **Mischief** with the names below (or any names;
+tell Claude Code which is which), and they'll be placed for you. Each spot
+already has its description and alt text in `content/site.ts` under
+`mischiefPage`, `home.mischief` and the Mischief & Mortar collection.
+
+| File in `public/photos/` | Where it appears | Shape and minimum size |
+|---|---|---|
+| `mischief-hero.jpg` | /mischief, top (arch): a powder room papered with the owner's dogs | Portrait 4:5, 1600 × 2000 |
+| `mischief-wallpaper.jpg` | Custom Wallpaper | Portrait 4:5, 1600 × 2000 |
+| `mischief-drawer.jpg` | Inside-the-Drawer Surprises | Portrait 4:5, 1600 × 2000 |
+| `mischief-doorbell.jpg` | Custom Doorbells | Portrait 4:5, 1600 × 2000 |
+| `mischief-knocker.jpg` | Custom Door Knockers | Portrait 4:5, 1600 × 2000 |
+| `mischief-secret-door.jpg` | More mischief: Secret Doors | Square, 1200 × 1200 |
+| `mischief-tile-message.jpg` | More mischief: A Message in the Tile | Square, 1200 × 1200 |
+| `mischief-star-ceiling.jpg` | More mischief: Star Map Ceilings | Square, 1200 × 1200 |
+| `mischief-disco-powder.jpg` | More mischief: The Disco Powder Room | Square, 1200 × 1200 |
+| `mischief-stairs.jpg` | More mischief: Storytelling Stairs | Square, 1200 × 1200 |
+| `mischief-neon.jpg` | More mischief: Glass & Neon | Square, 1200 × 1200 |
+| `mischief-switch-plates.jpg` | More mischief: Personal Switch Plates | Square, 1200 × 1200 |
+| `mischief-house-numbers.jpg` | More mischief: House Numbers | Square, 1200 × 1200 |
+| `mischief-living-wall.jpg` | More mischief: Living Walls | Square, 1200 × 1200 |
+| `mischief-garage.jpg` | More mischief: The Garage, Reconsidered | Square, 1200 × 1200 |
+| `mischief-box.jpg` | The Mischief Box band: an open gift box with a bronze knocker | Landscape 3:2, 2000 × 1333 |
+| `mischief-and-mortar.jpg` | Mischief & Mortar collection (Home card + Collections page): a bronze fox knocker on a green door | Portrait 4:5, 1600 × 2000 |
+| `home-knocker.jpg` | Home page band, "Every home deserves a secret or two." | Square, 1200 × 1200 |
+
+Eighteen images in all. `home-knocker.jpg` can simply be a square crop of
+`mischief-knocker.jpg` if you'd rather not make another, which makes it seventeen.

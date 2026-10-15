@@ -41,6 +41,7 @@ export const nav = [
   { label: `The Alliance`, href: `/the-alliance` },
   { label: `Collections`, href: `/collections` },
   { label: `Surfaces`, href: `/surfaces` },
+  { label: `Mischief`, href: `/mischief` },
   { label: `How it works`, href: `/how-it-works` },
   { label: `Makers`, href: `/makers` },
 ];
@@ -91,7 +92,7 @@ export const photos = {
   },
 };
 
-// ── The six collections ──────────────────────────────────────────────────────
+// ── The seven collections ──────────────────────────────────────────────────────
 export const collections = [
   {
     slug: `gilt-and-grain`,
@@ -204,6 +205,27 @@ export const collections = [
       concept: true,
     },
   },
+  {
+    slug: `mischief-and-mortar`,
+    name: `Mischief & Mortar`,
+    mood: `The playful side.`,
+    description: `Hidden surprises, custom doorbells and knockers, and wallpaper starring the people and places you love.`,
+    // This collection has its own page.
+    href: `/mischief`,
+    linkLabel: `See Mischief & Mortar`,
+    cardPhoto: {
+      file: ``,
+      shot: `A hand-cast bronze fox door knocker on a deep green front door, warm afternoon light. Portrait`,
+      alt: `A hand-cast bronze fox door knocker on a deep green front door`,
+      concept: true,
+    },
+    photo: {
+      file: ``,
+      shot: `A hand-cast bronze fox door knocker on a deep green front door, warm afternoon light. Portrait`,
+      alt: `A hand-cast bronze fox door knocker on a deep green front door`,
+      concept: true,
+    },
+  },
 ];
 
 // ── Home page ────────────────────────────────────────────────────────────────
@@ -246,9 +268,9 @@ When they're made by hand, a house starts to feel like it was made for you.`,
     link: `Read about the Alliance`,
   },
   collections: {
-    eyebrow: `Six collections`,
+    eyebrow: `Seven collections`,
     heading: `Each one a room *of its own.*`,
-    swipeHint: `Swipe to see all six`,
+    swipeHint: `Swipe to see all seven`,
   },
   // The full-width ceiling band, between the collections and the closing.
   fifthWall: {
@@ -258,6 +280,17 @@ When they're made by hand, a house starts to feel like it was made for you.`,
       file: `home-fifth-wall.jpg`,
       shot: `Looking straight up at a richly wallpapered ceiling above a dining table, a brass pendant hanging from its center. Wide`,
       alt: `A dining room beneath a ceiling painted as a soft sunset sky, a chandelier at its center`,
+      concept: true,
+    },
+  },
+  // The small playful band, just before the closing.
+  mischief: {
+    line: `Every home deserves *a secret or two.*`,
+    link: `Meet Mischief & Mortar`,
+    photo: {
+      file: ``,
+      shot: `A hand-cast bronze door knocker shaped like a fox, on a painted front door, close up. Square`,
+      alt: `A hand-cast bronze fox door knocker on a painted front door`,
       concept: true,
     },
   },
@@ -300,8 +333,8 @@ At the same time, I kept meeting extraordinary makers, often just a few miles fr
 // ── Collections page ─────────────────────────────────────────────────────────
 export const collectionsPage = {
   title: `Collections`,
-  description: `Six collections of handmade, one-of-a-kind pieces for the home: Gilt & Grain, Ore & Oak, Brass & Burl, Gilt & Loam, Marble & Moss and Paper & Plaster.`,
-  eyebrow: `Six collections`,
+  description: `Seven collections of handmade, one-of-a-kind pieces for the home: Gilt & Grain, Ore & Oak, Brass & Burl, Gilt & Loam, Marble & Moss, Paper & Plaster and Mischief & Mortar.`,
+  eyebrow: `Seven collections`,
   heading: `Choose by *feeling.*`,
   lede: `Each collection is a mood, so you can choose by feeling instead of by catalog number.`,
   numberLabel: `Collection`,
@@ -400,6 +433,108 @@ export const surfacesPage = {
     body: `Tell me a little about your home, and I'll bring samples to your walk-through.`,
     button: `Ask about Surfaces`,
   },
+  // The small link under the closing, to the playful line.
+  mischiefLink: `Want something playful? *See Mischief & Mortar.*`,
+};
+
+// ── Mischief & Mortar page (/mischief) ───────────────────────────────────────
+// Every photo here is a rendering for now, so each keeps `concept: true`.
+export const mischiefPage = {
+  // What Google and link previews show.
+  title: `Custom Wallpaper, Doorbells & Door Knockers | Mischief & Mortar`,
+  description: `Hand-drawn custom wallpaper, drawer surprises, and one-of-a-kind doorbells and door knockers, made by artisans and installed in California's Gold Country and Sacramento area.`,
+  eyebrow: `The playful side`,
+  heading: `Mischief *& Mortar*`,
+  lede: `Every beautiful home deserves a secret or two. A drawer that makes you smile. A doorbell nobody else has. Wallpaper starring your dog. Made by hand, made for you, and impossible to find anywhere else.`,
+  heroPhoto: {
+    file: ``,
+    shot: `A powder room papered in a hand-drawn pattern of the owner's own dogs, a brass sconce glowing. Portrait`,
+    alt: `A powder room papered in a hand-drawn repeating pattern of two spaniels, lit by a brass sconce`,
+    concept: true,
+  },
+  heroButton: `Request a commission`,
+  intro: `Quiet luxury is one way not to settle. A home with a sense of humor is the other. Everything here is still handmade by Members of the Alliance and installed by our trades. Playful, *and made to last.*`,
+  signature: {
+    eyebrow: `Commissioned for you`,
+    heading: `Four *signatures*`,
+    more: `Tell me more`,
+    items: [
+      {
+        title: `Custom Wallpaper`,
+        body: `Your dog, your chickens, your horses, your hometown or the land your house sits on, hand-drawn by an artist and turned into a repeating wallpaper made only for you. Perfect for a powder room, a mudroom, a nursery or a ceiling.`,
+        photo: { file: ``, shot: `A mudroom papered in a hand-drawn repeat of the family's chickens and horses. Portrait`, alt: `A mudroom papered in a hand-drawn repeating pattern of hens and horses above a bench of boots`, concept: true },
+      },
+      {
+        title: `Inside-the-Drawer Surprises`,
+        body: `The best rooms keep a secret. I line drawers, cabinet backs, pantry doors and the inside of the coat closet with bold paper, hand-painted patterns or a hidden message, so the people who live there get a small surprise every day.`,
+        photo: { file: ``, shot: `An open kitchen drawer lined in a bold hand-painted pattern, a small message inside. Portrait`, alt: `An open oak kitchen drawer lined with bold hand-painted cherry-red pattern`, concept: true },
+      },
+      {
+        title: `Custom Doorbells`,
+        body: `The first thing a guest touches deserves better than a plastic button. Hand-cast bronze, carved stone, enamel or ceramic doorbells shaped as a quail, a leaf, a family initial or something only you would think of.`,
+        photo: { file: ``, shot: `A hand-cast bronze doorbell shaped as a California quail beside a front door. Portrait`, alt: `A hand-cast bronze doorbell shaped like a California quail on a plaster wall beside a front door`, concept: true },
+      },
+      {
+        title: `Custom Door Knockers`,
+        body: `A knocker made for one front door: a cast-bronze hand, a fox, a key, a branch from your own oak tree. A small sculpture that says hello before you do.`,
+        photo: { file: ``, shot: `A cast-bronze oak-branch door knocker on a heavy wood front door. Portrait`, alt: `A cast-bronze door knocker shaped like an oak branch with acorns on a heavy wooden front door`, concept: true },
+      },
+    ],
+  },
+  more: {
+    heading: `More *mischief*`,
+    items: [
+      { title: `Secret Doors`, line: `A bookcase that swings open to a wine room, office or hideout.`, photo: { file: ``, shot: `A bookcase swung open onto a lit wine room`, alt: `A walnut bookcase swung open to reveal a softly lit wine room`, concept: true } },
+      { title: `A Message in the Tile`, line: `A name, a date or an inside joke set into the tile, found only by those who look.`, photo: { file: ``, shot: `A small hand-lettered tile with a date set into a field of plain tile`, alt: `A single hand-lettered tile reading a wedding date, set into a field of plain white tile`, concept: true } },
+      { title: `Star Map Ceilings`, line: `A ceiling that glows with the night sky from the day that mattered most.`, photo: { file: ``, shot: `A bedroom ceiling painted as a glowing star map at night`, alt: `A bedroom ceiling glowing with a painted star map of the night sky`, concept: true } },
+      { title: `The Disco Powder Room`, line: `Mirrored mosaic, bold paper and a tiny chandelier. The party room of the house.`, photo: { file: ``, shot: `A powder room with mirrored mosaic, bold paper and a tiny chandelier`, alt: `A powder room of mirrored mosaic tile and bold paper beneath a tiny crystal chandelier`, concept: true } },
+      { title: `Storytelling Stairs`, line: `One painted tile, word or illustration on every step.`, photo: { file: ``, shot: `Stair risers each with a different painted illustration`, alt: `A staircase with a different hand-painted illustration on each riser`, concept: true } },
+      { title: `Glass & Neon`, line: `A handmade sign that says something personal, for the bar, garage or playroom.`, photo: { file: ``, shot: `A handmade neon sign with a family name above a home bar`, alt: `A warm handmade neon script sign glowing above a home bar`, concept: true } },
+      { title: `Personal Switch Plates`, line: `A tiny brass key, a little hinged door, a hand-painted bird.`, photo: { file: ``, shot: `A brass switch plate with a tiny hinged door`, alt: `A brass light switch plate with a tiny hinged door and a hand-painted bird`, concept: true } },
+      { title: `House Numbers`, line: `Handmade in ceramic, cast iron, enamel or neon.`, photo: { file: ``, shot: `Handmade ceramic house numbers on a plaster wall`, alt: `Hand-glazed ceramic house numbers on a limewashed plaster wall`, concept: true } },
+      { title: `Living Walls`, line: `Moss and living art for the dark corners.`, photo: { file: ``, shot: `A preserved moss wall in a dim hallway`, alt: `A wall of soft green moss and ferns in a dim hallway`, concept: true } },
+      { title: `The Garage, Reconsidered`, line: `Checkerboard floors, brass hooks and a mural of the car you love.`, photo: { file: ``, shot: `A garage with a checkerboard floor, brass hooks and a mural of a vintage car`, alt: `A garage with a black-and-cream checkerboard floor and a painted mural of a vintage truck`, concept: true } },
+    ],
+  },
+  box: {
+    heading: `The Mischief *Box.*`,
+    body: `A gift box with one handmade surprise, a custom doorbell, knocker, switch plate or house number, ready for a new homeowner. Agents and builders: this is the closing gift people actually remember.`,
+    button: `Ask about the Mischief Box`,
+    photo: { file: ``, shot: `An open linen gift box holding a hand-cast bronze door knocker on tissue. Wide`, alt: `An open linen gift box holding a hand-cast bronze door knocker nestled in tissue`, concept: true },
+  },
+  // The commission request form.
+  form: {
+    eyebrow: `Commission request`,
+    heading: `Tell me *the story.*`,
+    intro: `The four signatures are made to order. Tell me what you have in mind, and send a few photos if you like. I read every request myself.`,
+    fields: {
+      name: { label: `Full name`, error: `Please add your full name.` },
+      email: { label: `Email`, error: `Please add your email, so I can reach you.` },
+      phone: { label: `Phone` },
+      wants: { label: `What would you like?`, note: `pick any`, error: `Please pick at least one.` },
+      story: { label: `Tell me the story`, placeholder: `Who or what should it feature? Pets, places, initials, a favorite tree...` },
+      photos: {
+        label: `Inspiration photos`,
+        hint: `Up to 5 images, each under 10MB. Pets, places, your front door.`,
+        button: `Add photos`,
+        remove: `Remove`,
+        tooMany: `That's more than 5 photos. I've kept the first 5.`,
+        tooBig: `That photo is over 10MB, so I've left it out:`,
+        notImage: `That file isn't a photo, so I've left it out:`,
+        uploading: `Sending photo`,
+        failed: `A photo didn't send. Please try again, or remove it and send the rest.`,
+      },
+      gift: { label: `Is this a gift?` },
+      timing: { label: `Timing`, note: `pick one`, error: `Please choose a timing.` },
+    },
+    submit: `Send my request`,
+    sending: `Sending…`,
+    successHeading: `Got *it.*`,
+    success: `I love a good story. I'll be in touch within a few days with ideas and a maker in mind.`,
+  },
+  closing: {
+    heading: `Every home I touch gets one secret. *Want yours?*`,
+  },
 };
 
 // ── How it works page ────────────────────────────────────────────────────────
@@ -488,6 +623,11 @@ export const makersPage = {
           `Tile and ceramics`,
           `Mural and decorative painting`,
           `Plaster and limewash`,
+          `Illustration and pattern design`,
+          `Metal casting and bronze`,
+          `Enamel and small sculpture`,
+          `Glass and neon`,
+          `Decorative painting`,
         ],
       },
       location: { label: `Where you work`, hint: `Town or region is fine.`, error: `Please tell me where you work.` },
@@ -529,6 +669,9 @@ export const waitlistPage = {
     },
     // Shown when someone arrives from "Ask about Surfaces".
     surfacesNote: `I've marked wallpaper and ceilings for you below. Change anything you like.`,
+    // Shown when someone arrives from the Mischief & Mortar page.
+    mischiefNote: `I've marked Mischief & Mortar for you below. Change anything you like.`,
+    mischiefBoxNote: `You're asking about the Mischief Box. I've marked Mischief & Mortar below, and I'll bring box ideas to our first conversation.`,
     submit: `Join the list`,
     sending: `Sending…`,
     successHeading: `You're on *the list.*`,
@@ -552,10 +695,14 @@ export const formText = {
 // so ask Claude Code before editing them.
 export const choices = {
   homeType: [`New construction`, `Existing home`, `Second home`, `Short-term rental`],
-  bothers: [`Lighting`, `Hardware and switch plates`, `Vents and registers`, `Color and texture`, `A whole room`, `Wallpaper, tile or ceilings`],
+  bothers: [`Lighting`, `Hardware and switch plates`, `Vents and registers`, `Color and texture`, `A whole room`, `Wallpaper, tile or ceilings`, `Something playful (Mischief & Mortar)`],
   surfaces: [`Ceilings`, `Powder room`, `Entry`, `Stairs`, `Closet`, `Bookshelves`, `Laundry`, `Fireplace`, `Not sure yet`],
   timing: [`This season`, `In the next 6 months`, `Just curious`],
   heardFrom: [`Realtor or friend`, `Instagram`, `Facebook`, `Other`],
+  // The commission request form (Mischief & Mortar).
+  wants: [`Custom wallpaper`, `Drawer and cabinet surprises`, `Doorbell`, `Door knocker`, `Mischief Box`, `Something else`],
+  gift: [`Yes`, `No`],
+  commissionTiming: [`Before the holidays`, `In the next 3 months`, `No rush`],
 } as const;
 
 // ── Messages shown when something goes wrong ─────────────────────────────────

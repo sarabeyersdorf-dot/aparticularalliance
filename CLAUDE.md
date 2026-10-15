@@ -24,7 +24,7 @@ Next.js 16 (App Router) + Tailwind CSS 4, deployed on Vercel from `main`.
   Sara through Resend (`lib/notify.ts`).
 - Supabase project **"A Particular Alliance"**, id `loiqsitfunvnjgaqyxnm`
   (Sara's free org; her Legacy CRM is a different project, never touch it from here).
-  Tables `waitlist_signups`, `maker_applications`: RLS on, `anon` INSERT only.
+  Tables `waitlist_signups`, `maker_applications`, `commission_requests`: RLS on, `anon` INSERT only.
   Keep it that way: the public site must never be able to read the list.
 - **Spam is flagged, never discarded** (`suspected_spam`). A hidden trap field
   once silently threw away a real lead on Sara's other site because a
@@ -92,3 +92,25 @@ space on the left. Live at aparticularalliance.com since 2026-10-15
 Cloud sessions may be unable to reach `*.supabase.co`. Test forms against a
 local stand-in that records requests, and have Sara send one real signup
 after deploying.
+
+## Mischief & Mortar (2026-10-16)
+- `/mischief` (`app/mischief/page.tsx`), wording in `mischiefPage` in
+  `site.ts`. Nav item after Surfaces; seventh collection
+  `mischief-and-mortar` (links to /mischief); Home band `home.mischief`
+  before the closing; Surfaces closing has `surfacesPage.mischiefLink`.
+- **One extra accent, this line only:** `cherry` #8b2635 (7.7:1 on paper,
+  text-safe) and `cherry-soft` #c45a68 (decorative only). Doodles
+  (`components/Doodles.tsx`: arrow, squiggle, peeking fox) use them.
+- **Commission form** (`components/CommissionForm.tsx` → `/api/commission`
+  → `commission_requests`). Photos go from the BROWSER straight to the
+  private bucket `commission-photos` (a Vercel function body is capped at
+  4.5MB; photos may be 10MB). anon may only INSERT objects named
+  `<uuid>/<1-5>.<jpg|jpeg|png|webp|heic|heif|gif>`, with no SELECT, UPDATE or
+  DELETE. Each attempt uses a fresh folder, so a retry never collides. The
+  page passes SUPABASE_URL and the publishable key to the form at build
+  time, so changing either needs a redeploy. `parseCommission` keeps only
+  paths inside the request's own folder.
+- Waitlist `?interest=` takes `surfaces`, `mischief`, `mischief-box`
+  (`INTERESTS` in `lib/forms.ts`, mirrored by the DB CHECK). Both Mischief
+  tags pre-tick "Something playful (Mischief & Mortar)".
+- Voice for this line also avoids: quirky, wacky, novelty, gimmick, cheap.

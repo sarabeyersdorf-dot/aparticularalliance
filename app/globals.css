@@ -12,6 +12,9 @@
   --color-muted: #5c544b;   /* secondary text (7:1 on paper) */
   --color-brass: #7a5c2b;   /* accent for text and links (5.6:1 on paper) */
   --color-brass-soft: #a98a52; /* decorative rules only, never text */
+  /* Mischief & Mortar only: one extra accent, a deep cherry. */
+  --color-cherry: #8b2635;      /* text and doodles (7.7:1 on paper, 6.9:1 on plaster) */
+  --color-cherry-soft: #c45a68; /* decorative only, never text */
 
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-figtree), "Figtree", system-ui, sans-serif;

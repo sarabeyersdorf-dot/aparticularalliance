@@ -31,6 +31,9 @@ export function looksAutomated(body: Body): boolean {
   return trap !== '' || !Number.isFinite(elapsed) || elapsed < MIN_FILL_MS;
 }
 
+// Where a waitlist signup arrived from (?interest=… on the button they pressed).
+export const INTERESTS = ['surfaces', 'mischief', 'mischief-box'] as const;
+
 export type Result<T> = { ok: true; row: T } | { ok: false; error: 'required' | 'email' };
 
 export function parseWaitlist(body: Body): Result<Record<string, unknown>> {
@@ -55,7 +58,7 @@ export function parseWaitlist(body: Body): Result<Record<string, unknown>> {
       home_type,
       bothers,
       surfaces,
-      interest: body.interest === 'surfaces' ? 'surfaces' : null,
+      interest: oneOf(body.interest, INTERESTS),
       timing,
       heard_from: oneOf(body.heard_from, choices.heardFrom),
       source_page: optional(body.source_page, 300),
@@ -80,6 +83,44 @@ export function parseMaker(body: Body): Result<Record<string, unknown>> {
       location,
       website: optional(body.website, 300),
       note: optional(body.note, 4000),
+      suspected_spam: looksAutomated(body),
+    },
+  };
+}
+
+// A commission request (Mischief & Mortar). Photos were already sent by the
+// browser into the private bucket; the row only lists where they are, and
+// only paths in that request's own folder are kept.
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
+
+export function parseCommission(body: Body): Result<Record<string, unknown>> {
+  const full_name = text(body.full_name, 200);
+  const email = text(body.email, 320).toLowerCase();
+  const rawWants = Array.isArray(body.wants) ? body.wants : [];
+  const wants = [...new Set(rawWants.map((w) => oneOf(w, choices.wants)).filter((w) => w !== null))];
+  const timing = oneOf(body.timing, choices.commissionTiming);
+  if (!full_name || !email || !wants.length || !timing) return { ok: false, error: 'required' };
+  if (!EMAIL.test(email)) return { ok: false, error: 'email' };
+  const folder = typeof body.photo_folder === 'string' && UUID.test(body.photo_folder) ? body.photo_folder : null;
+  const shape = folder ? new RegExp(`^${folder}/[1-5]\\.(jpg|jpeg|png|webp|heic|heif|gif)$`) : null;
+  const rawPaths = Array.isArray(body.photo_paths) ? body.photo_paths : [];
+  const photo_paths = shape
+    ? [...new Set(rawPaths.filter((x): x is string => typeof x === 'string' && shape.test(x)))].slice(0, 5)
+    : [];
+  const gift = oneOf(body.is_gift, choices.gift);
+  return {
+    ok: true,
+    row: {
+      full_name,
+      email,
+      phone: optional(body.phone, 40),
+      wants,
+      story: optional(body.story, 4000),
+      photo_folder: photo_paths.length ? folder : null,
+      photo_paths,
+      is_gift: gift === null ? null : gift === 'Yes',
+      timing,
+      source_page: optional(body.source_page, 300),
       suspected_spam: looksAutomated(body),
     },
   };

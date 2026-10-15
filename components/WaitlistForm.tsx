@@ -6,6 +6,9 @@ import { choices, errors as messages, formText, waitlistPage } from '@/content';
 import Confirmation from './Confirmation';
 import { ChoiceGroup, ErrorSummary, Errors, TextField, checkRequired, focusFirst } from './FormBits';
 import { TrapField, useFormSubmit } from './useFormSubmit';
+import { INTERESTS } from '@/lib/forms';
+
+type Interest = (typeof INTERESTS)[number];
 
 const f = waitlistPage.form;
 const F = f.fields;
@@ -13,12 +16,18 @@ const F = f.fields;
 export default function WaitlistForm() {
   const { status, error, submit } = useFormSubmit('/api/waitlist');
   const [errs, setErrs] = useState<Errors>({});
-  // Arrived from "Ask about Surfaces" (?interest=surfaces): tick wallpaper
-  // and ceilings, and record where they came from.
-  const [fromSurfaces, setFromSurfaces] = useState(false);
+  // Arrived from a button elsewhere on the site (?interest=…): tick the
+  // matching answers, and record where they came from.
+  //   surfaces      "Ask about Surfaces": wallpaper and ceilings
+  //   mischief      Mischief & Mortar's "Join the list" and "Tell me more"
+  //   mischief-box  "Ask about the Mischief Box"
+  const [interest, setInterest] = useState<Interest | null>(null);
   useEffect(() => {
-    setFromSurfaces(new URLSearchParams(window.location.search).get('interest') === 'surfaces');
+    const v = new URLSearchParams(window.location.search).get('interest');
+    setInterest(INTERESTS.find((i) => i === v) ?? null);
   }, []);
+  const fromSurfaces = interest === 'surfaces';
+  const fromMischief = interest === 'mischief' || interest === 'mischief-box';
 
   if (status === 'done') {
     return (
@@ -58,7 +67,7 @@ export default function WaitlistForm() {
       home_type: data.get('home_type'),
       bothers: data.getAll('bothers'),
       surfaces: data.getAll('surfaces'),
-      interest: fromSurfaces ? 'surfaces' : null,
+      interest,
       timing: data.get('timing'),
       heard_from: data.get('heard_from'),
       ap_hp: data.get('ap_hp'),
@@ -82,15 +91,19 @@ export default function WaitlistForm() {
       </div>
 
       <ChoiceGroup name="home_type" legend={F.homeType.label} note={F.homeType.note} options={choices.homeType} required error={errs.home_type} onEdit={clear} />
-      {fromSurfaces && <p className="border-l-2 border-brass-soft pl-4 text-sm text-muted">{f.surfacesNote}</p>}
+      {interest && (
+        <p className="border-l-2 border-brass-soft pl-4 text-sm text-muted">
+          {interest === 'surfaces' ? f.surfacesNote : interest === 'mischief-box' ? f.mischiefBoxNote : f.mischiefNote}
+        </p>
+      )}
       <ChoiceGroup
-        key={`bothers-${fromSurfaces}`}
+        key={`bothers-${interest}`}
         name="bothers"
         legend={F.bothers.label}
         note={F.bothers.note}
         options={choices.bothers}
         multiple
-        defaultValues={fromSurfaces ? ['Wallpaper, tile or ceilings'] : []}
+        defaultValues={fromSurfaces ? ['Wallpaper, tile or ceilings'] : fromMischief ? ['Something playful (Mischief & Mortar)'] : []}
       />
       <ChoiceGroup
         key={`surfaces-${fromSurfaces}`}

@@ -178,6 +178,11 @@ export default async function SurfacesPage() {
             {c.closing.button}
           </Link>
         </div>
+        <p {...reveal(4)} className="mt-14 font-serif text-xl">
+          <Link href="/mischief" className="text-ink no-underline transition-colors hover:text-cherry [&_em]:text-cherry">
+            <Emph text={c.mischiefLink} /> →
+          </Link>
+        </p>
       </section>
     </>
   );

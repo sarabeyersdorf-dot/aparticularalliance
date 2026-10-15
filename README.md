@@ -51,6 +51,19 @@ rows named "TEST … (delete me)" are from the launch check and can go.
 can add entries but can never read them back, so nobody can pull your list
 through the site.
 
+### Commission requests and their photos (Mischief & Mortar)
+
+- **The requests:** Table Editor → **commission_requests**. One row per
+  request: what they'd like, their story, gift or not, timing. The
+  `photo_folder` column names the folder their photos are in.
+- **The photos:** left sidebar → **Storage** → bucket **commission-photos** →
+  open the folder with that name. Click a photo to preview it, or **Download**.
+  The bucket is private: the website can put photos in but can never list or
+  open them, and there is no public link to any of them. Only you, signed in,
+  can see them.
+- Each request also emails you (once the email alerts in step 6 are set up),
+  with a link straight to the photos.
+
 ## 4. Previewing and deploying (one-time setup on Vercel)
 
 1. Go to **vercel.com** → **Add New… → Project**.

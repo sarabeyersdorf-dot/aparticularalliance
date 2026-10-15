@@ -12,8 +12,8 @@ export const metadata = {
   openGraph: { title: c.title, description: c.description, url: '/collections' },
 };
 
-const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone', 'linen'] as const;
-const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone', 'linen', 'plaster'] as const;
+const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 
 export default function CollectionsPage() {
   return (

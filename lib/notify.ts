@@ -12,6 +12,9 @@
 //                      e.g.  A Particular Alliance <hello@aparticularalliance.com>
 
 const SUPABASE_TABLES = 'https://supabase.com/dashboard/project/loiqsitfunvnjgaqyxnm/editor';
+const SUPABASE_PHOTOS = 'https://supabase.com/dashboard/project/loiqsitfunvnjgaqyxnm/storage/buckets/commission-photos';
+
+type Kind = 'waitlist' | 'maker' | 'commission';
 
 type Row = Record<string, unknown>;
 
@@ -25,21 +28,40 @@ function show(v: unknown): string {
   return String(v);
 }
 
-function build(kind: 'waitlist' | 'maker', row: Row) {
+function build(kind: Kind, row: Row) {
   const name = show(row.full_name);
   const flag = row.suspected_spam ? '[Possible spam] ' : '';
+  const photoCount = Array.isArray(row.photo_paths) ? row.photo_paths.length : 0;
   const subject =
     kind === 'waitlist'
       ? `${flag}New founding client: ${name} · ${show(row.city)}`
-      : `${flag}New maker application: ${name} · ${show(row.craft)}`;
+      : kind === 'commission'
+        ? `${flag}New commission request: ${name} · ${show(row.wants)}`
+        : `${flag}New maker application: ${name} · ${show(row.craft)}`;
+  const from: Record<string, string> = {
+    surfaces: ` from the Surfaces page`,
+    mischief: ` from the Mischief & Mortar page`,
+    'mischief-box': ` asking about the Mischief Box`,
+  };
   const intro =
     kind === 'waitlist'
-      ? row.interest === 'surfaces'
-        ? `Someone just joined the Founding Client List from the Surfaces page.`
-        : `Someone just joined the Founding Client List.`
-      : `A maker just applied to join the Alliance.`;
+      ? `Someone just joined the Founding Client List${from[String(row.interest)] ?? ''}.`
+      : kind === 'commission'
+        ? `Someone just sent a Mischief & Mortar commission request.`
+        : `A maker just applied to join the Alliance.`;
   const fields: [string, unknown][] =
-    kind === 'waitlist'
+    kind === 'commission'
+      ? [
+          ['Name', row.full_name],
+          ['Email', row.email],
+          ['Phone', row.phone],
+          ['What they would like', row.wants],
+          ['Their story', row.story],
+          ['A gift?', row.is_gift === null || row.is_gift === undefined ? null : row.is_gift ? 'Yes' : 'No'],
+          ['Timing', row.timing],
+          ['Inspiration photos', photoCount ? `${photoCount} (in Supabase Storage → commission-photos → folder ${row.photo_folder})` : null],
+        ]
+      : kind === 'waitlist'
       ? [
           ['Name', row.full_name],
           ['Email', row.email],
@@ -72,6 +94,7 @@ function build(kind: 'waitlist' | 'maker', row: Row) {
     spamNote,
     footer,
     `All signups: ${SUPABASE_TABLES}`,
+    photoCount ? `Photos (private, sign in to view): ${SUPABASE_PHOTOS}` : '',
   ]
     .filter((l, i, a) => !(l === '' && a[i - 1] === ''))
     .join('\n');
@@ -92,12 +115,13 @@ function build(kind: 'waitlist' | 'maker', row: Row) {
 ${spamNote ? `<p style="margin:20px 0 0;padding:12px 14px;background:#ece4d8;color:#5c544b">${esc(spamNote)}</p>` : ''}
 <p style="margin:24px 0 0;color:#5c544b">${esc(footer)}</p>
 <p style="margin:8px 0 0"><a href="${SUPABASE_TABLES}" style="color:#7a5c2b">See all signups in Supabase</a></p>
+${photoCount ? `<p style="margin:8px 0 0"><a href="${SUPABASE_PHOTOS}" style="color:#7a5c2b">See the photos in Supabase</a> (they are private; sign in to view them)</p>` : ''}
 </div></div>`;
 
   return { subject, text, html };
 }
 
-export async function notifyNewEntry(kind: 'waitlist' | 'maker', row: Row): Promise<void> {
+export async function notifyNewEntry(kind: Kind, row: Row): Promise<void> {
   const key = process.env.RESEND_API_KEY;
   const to = process.env.NOTIFY_EMAIL_TO;
   const from = process.env.NOTIFY_EMAIL_FROM;
