@@ -4,6 +4,12 @@ import './globals.css';
 import { site } from '@/content';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import RevealObserver from '@/components/RevealObserver';
+
+// Turns motion on before the first paint (so nothing jumps), unless the
+// visitor's device asks for reduced motion. If the page's script hasn't
+// taken over within 3.5 seconds, everything is simply shown.
+const MOTION_BOOT = `(function(){try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;var d=document.documentElement;d.classList.add('motion');setTimeout(function(){if(!d.classList.contains('motion-ready'))d.classList.add('motion-fallback')},3500)}catch(e){}})();`;
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -43,7 +49,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-US" className={`${cormorant.variable} ${figtree.variable}`}>
+    <html lang="en-US" className={`${cormorant.variable} ${figtree.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: MOTION_BOOT }} />
+      </head>
       <body className="min-h-screen antialiased">
         <a
           href="#main"
@@ -54,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <RevealObserver />
       </body>
     </html>
   );

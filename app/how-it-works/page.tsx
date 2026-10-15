@@ -1,4 +1,5 @@
 import { howPage as c, photos } from '@/content';
+import { reveal } from '@/lib/reveal';
 import PageIntro from '@/components/PageIntro';
 import Photo from '@/components/Photo';
 import ClosingCta from '@/components/ClosingCta';
@@ -33,7 +34,7 @@ export default function HowPage() {
 
       <ol className="wrap mt-20 space-y-16 sm:mt-28">
         {c.steps.map((s, i) => (
-          <li key={s.name} className="grid gap-4 border-t border-line pt-10 sm:grid-cols-[6rem_1fr] lg:grid-cols-[8rem_1fr_1fr] lg:gap-12">
+          <li key={s.name} {...reveal(0)} className="grid gap-4 border-t border-line pt-10 sm:grid-cols-[6rem_1fr] lg:grid-cols-[8rem_1fr_1fr] lg:gap-12">
             <span aria-hidden className="nums font-serif text-6xl leading-none text-brass sm:text-7xl">
               {i + 1}
             </span>

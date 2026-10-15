@@ -22,7 +22,7 @@ export default function Header() {
     <header className="relative z-40 border-b border-line/70">
       <div className="wrap flex items-center justify-between gap-6 py-6">
         <Link href="/" className="no-underline" aria-label="A Particular Alliance, home">
-          <Wordmark />
+          <Wordmark animate />
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-9 lg:flex">
@@ -31,7 +31,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               aria-current={pathname === item.href ? 'page' : undefined}
-              className="text-[0.82rem] uppercase tracking-[0.16em] text-muted no-underline transition-colors hover:text-ink aria-[current=page]:text-ink"
+              className="nav-link text-[0.82rem] uppercase tracking-[0.16em] text-muted no-underline transition-colors hover:text-ink aria-[current=page]:text-ink"
             >
               {item.label}
             </Link>

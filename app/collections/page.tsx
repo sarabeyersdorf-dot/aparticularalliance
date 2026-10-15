@@ -1,4 +1,5 @@
 import { collections, collectionsPage as c } from '@/content';
+import { reveal } from '@/lib/reveal';
 import PageIntro from '@/components/PageIntro';
 import Photo from '@/components/Photo';
 import ClosingCta from '@/components/ClosingCta';
@@ -40,12 +41,13 @@ export default function CollectionsPage() {
           >
             <Photo
               photo={col.photo}
+              reveal={0}
               arch
               ratio="aspect-[4/5]"
               tone={TONES[i]}
               className={`mx-auto w-full max-w-md lg:max-w-none ${i % 2 ? 'lg:order-last' : ''}`}
             />
-            <div>
+            <div {...reveal(1)}>
               <p className="eyebrow">
                 {c.numberLabel} {ROMAN[i]}
               </p>

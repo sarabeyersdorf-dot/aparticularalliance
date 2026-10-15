@@ -50,9 +50,16 @@ copy). Never drop an export in as-is: its forms would not save.
   also keeps hyphenated words like "walk-through" on one line.
 - Cormorant's default numerals are old-style (a "1" reads as a Roman "I").
   Any number set in the serif needs the `nums` class.
-- Next, at Sara's request: motion (gentle reveal on scroll), photo hover
-  movement, and an animated wordmark/logo. Respect
-  `prefers-reduced-motion` for all of it.
+- Motion (2026-10-15): add `{...reveal(n)}` (`lib/reveal.ts`) to make an
+  element drift in on scroll, `n` staggering siblings; `<Photo reveal={n}>`
+  for photos. A sideways-scrolling row takes `data-reveal-row` so its
+  off-screen cards arrive with it. Photos zoom slightly on hover
+  (`group/photo`). The header wordmark rises in word by word and draws a
+  brass line under the italic word (`<Wordmark animate>`). Never put a
+  reveal on a form: the signup must be visible at once.
+- All motion is off under `prefers-reduced-motion`, and nothing is hidden
+  unless the script that reveals it is running (`MOTION_BOOT` in
+  `app/layout.tsx`, with a 3.5s fall-back that shows everything).
 
 ## Sandbox note
 Cloud sessions may be unable to reach `*.supabase.co`. Test forms against a
