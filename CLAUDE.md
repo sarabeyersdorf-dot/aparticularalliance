@@ -61,6 +61,14 @@ copy). Never drop an export in as-is: its forms would not save.
   unless the script that reveals it is running (`MOTION_BOOT` in
   `app/layout.tsx`, with a 3.5s fall-back that shows everything).
 
+## Home hero
+A full-width photo (`photos.hero`, `hero-arch.jpg`) with the headline set on
+the empty plaster wall on its left; a soft paper-colored wash keeps the text
+readable on wide screens. On phones and tablets the text comes first and the
+photo follows. A replacement hero needs the same shape: wide, with empty
+space on the left. Live at aparticularalliance.com since 2026-10-15
+(particularalliance.com and both www addresses redirect to it).
+
 ## Sandbox note
 Cloud sessions may be unable to reach `*.supabase.co`. Test forms against a
 local stand-in that records requests, and have Sara send one real signup

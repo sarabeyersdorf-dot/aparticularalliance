@@ -55,9 +55,9 @@ export const joinButton = `Join the Founding Client List`;
 // for people using screen readers; update it to match your real photo.
 export const photos = {
   hero: {
-    file: `gilt-and-grain-kitchen.jpg`,
-    shot: `A handmade brass door lever on a plaster wall, soft morning light`,
-    alt: `Hand-hammered brass pulls and a brass lever on white oak kitchen cabinetry in warm light`,
+    file: `hero-arch.jpg`,
+    shot: `A plaster archway opening onto a brass pendant, a pottery lamp on a burl console and oak-covered hills, warm evening light. Wide, with empty wall on the left for the headline`,
+    alt: `A plaster archway opening onto a room with a brass pendant, a pottery lamp on a burl wood console and a view of oak-covered hills`,
   },
   before: {
     file: `before-plastic-switch-plate.jpg`,

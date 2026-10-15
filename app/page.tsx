@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { reveal } from '@/lib/reveal';
 import { collections, home, photos, site } from '@/content';
@@ -18,22 +19,41 @@ const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone'] as const;
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section aria-labelledby="hero" className="wrap grid items-center gap-12 pt-12 sm:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
-        <div>
-          <p {...reveal(0)} className="eyebrow">{home.hero.eyebrow}</p>
-          <h1 {...reveal(1)} id="hero" className="display mt-6 text-[3rem] sm:text-7xl lg:text-[5.2rem]">
-            <Emph text={home.hero.heading} />
-          </h1>
-          <p {...reveal(2)} className="mt-8 max-w-[42ch] text-lg text-muted">{home.hero.body}</p>
-          <div {...reveal(3)} className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8">
-            <JoinButton className="w-full sm:w-auto" />
-            <Link href="/collections" className="link text-sm">
-              {home.hero.secondaryLink}
-            </Link>
+      {/* Hero: one wide photo; the headline sits on its empty plaster wall.
+          On a phone the headline comes first and the photo follows. */}
+      <section aria-labelledby="hero" className="relative lg:flex lg:min-h-[min(86vh,820px)] lg:items-center">
+        <div className="wrap relative z-10 pt-12 pb-10 sm:pt-20 lg:py-24">
+          <div className="max-w-xl lg:max-w-[29rem] xl:max-w-[31rem]">
+            <p {...reveal(0)} className="eyebrow">{home.hero.eyebrow}</p>
+            <h1 {...reveal(1)} id="hero" className="display mt-6 text-[3rem] sm:text-7xl lg:text-[4.4rem] xl:text-[4.8rem]">
+              <Emph text={home.hero.heading} />
+            </h1>
+            <p {...reveal(2)} className="mt-8 max-w-[40ch] text-lg text-muted">{home.hero.body}</p>
+            <div {...reveal(3)} className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8">
+              <JoinButton className="w-full sm:w-auto" />
+              <Link href="/collections" className="link text-sm">
+                {home.hero.secondaryLink}
+              </Link>
+            </div>
           </div>
         </div>
-        <Photo photo={photos.hero} reveal={2} arch ratio="aspect-[4/5]" tone="plaster" priority className="mx-auto w-full max-w-md lg:max-w-none" />
+        <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9] lg:absolute lg:inset-0 lg:aspect-auto">
+          {photos.hero.file ? (
+            <Image
+              src={`/photos/${photos.hero.file}`}
+              alt={photos.hero.alt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[78%_center] lg:object-[100%_30%]"
+            />
+          ) : (
+            <Photo photo={photos.hero} ratio="h-full" tone="plaster" />
+          )}
+          {/* A soft wash of the page color over the wall, so the headline
+              always reads, whatever the photo. Wide screens only. */}
+          <div aria-hidden className="absolute inset-0 hidden bg-gradient-to-r from-paper/85 via-paper/40 via-45% to-transparent to-65% lg:block" />
+        </div>
       </section>
 
       {/* The problem: before and after */}
