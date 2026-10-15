@@ -55,9 +55,9 @@ export const joinButton = `Join the Founding Client List`;
 // for people using screen readers; update it to match your real photo.
 export const photos = {
   hero: {
-    file: `hero-arch.jpg`,
+    file: `hero-b.jpg`,
     shot: `A plaster archway opening onto a brass pendant, a pottery lamp on a burl console and oak-covered hills, warm evening light. Wide, with empty wall on the left for the headline`,
-    alt: `A plaster archway opening onto a room with a brass pendant, a pottery lamp on a burl wood console and a view of oak-covered hills`,
+    alt: `A plaster archway opening onto a brass pendant above a burl wood console, with a window onto oak-covered hills at sunset`,
   },
   before: {
     file: `before-plastic-switch-plate.jpg`,

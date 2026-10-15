@@ -62,7 +62,7 @@ copy). Never drop an export in as-is: its forms would not save.
   `app/layout.tsx`, with a 3.5s fall-back that shows everything).
 
 ## Home hero
-A full-width photo (`photos.hero`, `hero-arch.jpg`) with the headline set on
+A full-width photo (`photos.hero`, `hero-b.jpg`; spares `hero-a.jpg`, `hero-c.jpg`) with the headline set on
 the empty plaster wall on its left; a soft paper-colored wash keeps the text
 readable on wide screens. On phones and tablets the text comes first and the
 photo follows. A replacement hero needs the same shape: wide, with empty
