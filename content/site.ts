@@ -6,6 +6,8 @@
  *  How to edit safely:
  *  • Change only the words BETWEEN the backticks  `like this`.
  *    Apostrophes and quote marks are fine inside them: `I'm taking 25 homes.`
+ *  • Put *stars* around words to set them in italics, as in the headings:
+ *    `Anything but *beige.*`
  *  • Leave the labels on the left (heading:, body:, etc.) and all the
  *    punctuation outside the backticks exactly as they are.
  *  • A blank line between paragraphs in a long passage starts a new paragraph.
@@ -20,6 +22,9 @@
 // ── The business ─────────────────────────────────────────────────────────────
 export const site = {
   name: `A Particular Alliance`,
+  // How the name is set at the top and bottom of every page.
+  wordmark: `A *Particular* Alliance`,
+  founder: `Sara Cooper`,
   // Used for Google results and link previews when no page-specific one is set.
   description: `A Particular Alliance creates homes for people who won't settle for builder grade. Handmade, one-of-a-kind pieces from independent makers, sourced, priced, delivered and installed as one premium package.`,
   promise: `A Particular Alliance creates homes for people who won't settle for builder grade.`,
@@ -28,6 +33,7 @@ export const site = {
   contactEmail: ``,
   instagram: ``, // e.g. `https://instagram.com/aparticularalliance`
   footerTagline: `Never settle for builder grade.`,
+  footerCredit: `Founded by Sara Cooper.`,
 };
 
 // ── Navigation ───────────────────────────────────────────────────────────────
@@ -53,40 +59,30 @@ export const photos = {
     shot: `A handmade brass door lever on a plaster wall, soft morning light`,
     alt: `A hand-finished brass door lever against a warm plaster wall`,
   },
-  problem: {
+  before: {
     file: ``,
-    shot: `Close-up of a plain plastic switch plate in a beautiful room`,
-    alt: `A plain plastic light switch plate on a white wall`,
+    shot: `A plastic switch plate, straight on`,
+    alt: `A plain plastic light switch plate`,
+  },
+  after: {
+    file: ``,
+    shot: `A hand-carved walnut switch plate, straight on`,
+    alt: `A hand-carved walnut switch plate`,
   },
   alliance: {
     file: ``,
-    shot: `A maker's hands at work: forging, turning or throwing`,
-    alt: `An artisan's hands shaping a piece at the workbench`,
-  },
-  story: {
-    file: ``,
-    shot: `You walking through a home, looking closely at a detail`,
-    alt: `Sara Cooper looking closely at a detail in a client's home`,
+    shot: `A maker's hands at a workbench, wood shavings and hand tools, warm side light`,
+    alt: `A maker's hands at a workbench among wood shavings and hand tools`,
   },
   walkthrough: {
     file: ``,
-    shot: `A walk-through in progress: notebook, samples on a kitchen island`,
-    alt: `Material samples and a notebook laid out on a kitchen island`,
+    shot: `Sara in a client's entry, notebook in hand, looking at a door lever`,
+    alt: `Sara Cooper in a client's entry with a notebook, looking closely at a door lever`,
   },
   makers: {
     file: ``,
-    shot: `A maker's workshop: tools on the wall, a piece half finished`,
-    alt: `A maker's workshop with tools on the wall and a piece in progress`,
-  },
-  waitlist: {
-    file: ``,
-    shot: `A finished detail in a lived-in home: a ceramic lamp lit at dusk`,
-    alt: `A hand-thrown ceramic lamp glowing in a lived-in room at dusk`,
-  },
-  storyCard: {
-    file: ``,
-    shot: `The maker story card beside a finished piece`,
-    alt: `A printed card naming the maker, resting beside a finished piece`,
+    shot: `A potter at the wheel in a small foothill studio, clay on the hands, face out of frame`,
+    alt: `A potter's clay-covered hands at the wheel in a small studio`,
   },
 };
 
@@ -96,60 +92,55 @@ export const collections = [
     slug: `gilt-and-grain`,
     name: `Gilt & Grain`,
     mood: `The touchpoints.`,
-    description: `Warm brass and hand-finished wood for the things your hands find every day: cabinet pulls, door levers, switch plates and house numbers. Small pieces, felt a hundred times a day.`,
-    pieces: [`Cabinet pulls`, `Door levers`, `Switch plates`, `House numbers`],
+    description: `Warm brass and hand-finished wood: cabinet pulls, door levers, switch plates, house numbers.`,
     photo: {
       file: ``,
-      shot: `Brass cabinet pulls on a hand-finished wood drawer front`,
-      alt: `Hand-finished brass pulls on a warm wood drawer front`,
+      shot: `Brass cabinet pulls and a door lever on hand-finished oak, close and warm`,
+      alt: `Brass cabinet pulls and a door lever on hand-finished oak`,
     },
   },
   {
     slug: `ore-and-oak`,
     name: `Ore & Oak`,
     mood: `Gold Country, made by hand.`,
-    description: `Forged iron, reclaimed oak and native stone from makers in the Sierra foothills. Heavy, honest materials with a history, shaped by people who live where they come from.`,
-    pieces: [`Forged iron`, `Reclaimed oak`, `Native stone`],
+    description: `Forged iron, reclaimed oak, native stone from Sierra foothill makers.`,
     photo: {
       file: ``,
-      shot: `Forged iron hardware on a reclaimed oak door`,
-      alt: `Hand-forged iron hardware on a weathered reclaimed oak door`,
+      shot: `A forged iron fireplace set against native foothill stone and reclaimed oak`,
+      alt: `A forged iron fireplace set against native stone and reclaimed oak`,
     },
   },
   {
     slug: `brass-and-burl`,
     name: `Brass & Burl`,
     mood: `The statement.`,
-    description: `Sculptural lighting and rare figured woods, often commissioned from scratch. The piece people ask about first, made once, for one room.`,
-    pieces: [`Sculptural lighting`, `Figured woods`, `Commissioned pieces`],
+    description: `Sculptural lighting, rare figured woods, often commissioned from scratch.`,
     photo: {
       file: ``,
-      shot: `A sculptural light fixture above a burl wood table`,
-      alt: `A sculptural brass light fixture hanging above a figured burl wood table`,
+      shot: `A sculptural brass chandelier above a figured burl-wood table, evening light`,
+      alt: `A sculptural brass chandelier above a burl-wood table in evening light`,
     },
   },
   {
     slug: `gilt-and-loam`,
     name: `Gilt & Loam`,
     mood: `Earth, refined.`,
-    description: `Hand-thrown ceramics, plaster finishes, textured walls and pottery lamps. Color and texture that turn a flat white room into somewhere you want to stay.`,
-    pieces: [`Hand-thrown ceramics`, `Plaster finishes`, `Textured walls`, `Pottery lamps`],
+    description: `Hand-thrown ceramics, plaster finishes, textured walls, pottery lamps.`,
     photo: {
       file: ``,
-      shot: `A pottery lamp against a hand-troweled plaster wall`,
-      alt: `A hand-thrown pottery lamp in front of a textured plaster wall`,
+      shot: `Hand-thrown ceramic vessels and a pottery lamp in front of a textured plaster wall`,
+      alt: `Hand-thrown ceramic vessels and a pottery lamp against a textured plaster wall`,
     },
   },
   {
     slug: `marble-and-moss`,
     name: `Marble & Moss`,
     mood: `Stone and living things.`,
-    description: `Carved stone vessels, bath and kitchen accents, and planters. Quiet, weighty pieces that bring the outside in.`,
-    pieces: [`Carved stone vessels`, `Bath and kitchen accents`, `Planters`],
+    description: `Carved stone vessels, bath and kitchen accents, planters.`,
     photo: {
       file: ``,
-      shot: `A carved stone planter with moss or a fern on a windowsill`,
-      alt: `A carved stone planter holding a fern on a sunlit windowsill`,
+      shot: `A carved stone planter with ferns on a kitchen windowsill, cool morning light`,
+      alt: `A carved stone planter holding ferns on a kitchen windowsill`,
     },
   },
 ];
@@ -159,21 +150,23 @@ export const home = {
   title: `Never settle for builder grade`,
   hero: {
     eyebrow: `The eye you've always wanted.`,
-    heading: `Homes for people who won't settle for builder grade.`,
+    heading: `Homes for people who won't settle for *builder grade.*`,
     body: `I pair homeowners with independent makers, then source, price, deliver and install one-of-a-kind pieces as a single, finished package.`,
+    secondaryLink: `Choose a feeling`,
   },
   problem: {
     eyebrow: `The problem`,
-    heading: `Beautiful house. Builder-grade details.`,
-    body: `Walk through almost any new home, even one with a seven-figure price, and you'll find the same things: plastic switch plates, stamped vent covers, a light fixture that came in a box of twelve.
+    heading: `Beautiful house. *Builder-grade details.*`,
+    body: `Walk through almost any new home, even one with a seven-figure price, and you'll find the same things: plastic switch plates, stamped vent covers, a light fixture that came in a box of twelve. Nobody chose them for you. The builder chose them for everyone.
 
-Nobody chose them for you. The builder chose them for everyone.
+They're also the things you touch every day. The door lever. The cabinet pull. The plate around the light switch.
 
-They're also the things you touch every day. The door lever. The cabinet pull. The plate around the light switch. When they're made by hand, a house starts to feel like it was made for you.`,
+When they're made by hand, a house starts to feel like it was made for you.`,
+    beforeLabel: `Chosen for everyone`,
+    afterLabel: `Made for you`,
   },
   alliance: {
-    eyebrow: `The Alliance`,
-    heading: `An alliance of three.`,
+    heading: `An alliance *of three.*`,
     intro: `Every piece I place is the work of three people who care about the same thing.`,
     parties: [
       {
@@ -189,73 +182,60 @@ They're also the things you touch every day. The door lever. The cabinet pull. T
         body: `Me. I bring the eye, and I handle everything in between: sourcing, pricing, delivery and the install.`,
       },
     ],
-    link: `Read the story`,
+    link: `Read about the Alliance`,
   },
   collections: {
-    eyebrow: `The collections`,
-    heading: `Five collections, all handmade.`,
-    intro: `Each one starts from a material and a mood. Many pieces are commissioned for a single home.`,
-    link: `See all five collections`,
+    eyebrow: `Five collections`,
+    heading: `Each one a room *of its own.*`,
+    swipeHint: `Swipe to see all five`,
   },
   closing: {
-    heading: `Anything but beige.`,
+    stat: `25`,
+    statLabel: `Homes · first season`,
+    heading: `Anything but *beige.*`,
     body: `I'm taking 25 homes in our first season. Founding clients get a complimentary walk-through and first pick of the founding collection.`,
   },
 };
 
 // ── The Alliance page ────────────────────────────────────────────────────────
-// TODO for Sara: "Where it began" is a first draft. Make it your own story.
 export const alliancePage = {
   title: `The Alliance`,
   description: `The story behind A Particular Alliance: a client with standards, a maker with craft, and a curator who handles everything in between.`,
-  heading: `The Alliance.`,
-  lede: `Three parties, one standard.`,
+  eyebrow: `The Alliance`,
+  heading: `Three parties, *one standard.*`,
+  lede: `The client brings the standards. The maker brings the craft. I bring the eye, and everything in between.`,
   began: {
-    heading: `Where it began`,
-    body: `I've walked through a great many beautiful homes. As a real estate broker, it's part of the job. And again and again I noticed the same thing: the bones were extraordinary, and the details were builder grade.
+    heading: `Where it *began*`,
+    body: `I've walked through hundreds of homes as a real estate broker, some of them well over a million dollars. Again and again, I noticed the same thing. The square footage was there. The view was there. But the details told a different story: the same plastic switch plates, the same stamped vent covers, the same light fixtures you could find in any new subdivision.
 
-The plastic switch plate in a room with twelve-foot ceilings. The stamped vent cover under a window that frames the whole valley. Nobody had chosen those things. They had simply arrived with the house.
+Nobody did anything wrong. Builders choose what is fast, and most buyers never get the chance to choose otherwise. They move in, they get busy, and the house never quite becomes theirs.
 
-Meanwhile, a few miles away, there were people forging iron, turning wood and throwing clay at a level most homeowners never get to see. The two never met. A Particular Alliance is how they meet.`,
+At the same time, I kept meeting extraordinary makers, often just a few miles from the homes that needed them, working at a level most homeowners never see. The two worlds almost never met. A Particular Alliance is where they meet.`,
   },
   beliefs: {
-    heading: `What we believe`,
+    heading: `What we *believe*`,
     items: [
-      {
-        title: `The small things are the big things.`,
-        body: `You touch a door lever thousands of times. It should be worth touching.`,
-      },
-      {
-        title: `Your taste was never the problem.`,
-        body: `The builder chose those details, not you. My job is to help you choose your own.`,
-      },
-      {
-        title: `Makers deserve their name on the work.`,
-        body: `Every piece comes with a card that names the person who made it.`,
-      },
-      {
-        title: `One of a kind should not mean one more project to manage.`,
-        body: `You shouldn't have to coordinate five tradespeople to get it right. I do that.`,
-      },
+      `The small things are the big things.`,
+      `Your taste was never the problem.`,
+      `Makers deserve their name on the work.`,
+      `One of a kind should not mean one more project to manage.`,
     ],
   },
-  how: {
-    heading: `How it works`,
-    body: `It starts with a complimentary walk-through of your home and ends with every piece installed and its maker named. In between, I handle everything, and you get one clear price.`,
-    link: `See the five steps`,
-  },
-  tagline: `Our hand. Your name.`,
+  tagline: `Our hand. *Your name.*`,
+  makersLink: `Members of the Alliance`,
 };
 
 // ── Collections page ─────────────────────────────────────────────────────────
 export const collectionsPage = {
   title: `Collections`,
   description: `Five collections of handmade, one-of-a-kind pieces for the home: Gilt & Grain, Ore & Oak, Brass & Burl, Gilt & Loam and Marble & Moss.`,
-  heading: `The collections.`,
-  lede: `Five collections, each starting from a material and a mood. Every piece is handmade by a Member of the Alliance, and many are commissioned for a single home.`,
+  eyebrow: `Five collections`,
+  heading: `Choose by *feeling.*`,
+  lede: `Each collection is a mood, so you can choose by feeling instead of by catalog number.`,
+  numberLabel: `Collection`,
   closing: {
-    heading: `See them in your own home.`,
-    body: `Founding clients get first pick of the founding collection pieces.`,
+    heading: `Anything but *beige.*`,
+    body: `Founding clients get first pick of the founding collection.`,
   },
 };
 
@@ -263,67 +243,85 @@ export const collectionsPage = {
 export const howPage = {
   title: `How it works`,
   description: `From a complimentary walk-through to installation by licensed installers, in five steps, with one clear price.`,
-  heading: `How it works.`,
-  lede: `Five steps from builder grade to one of a kind. You make the choices; I handle the rest.`,
+  eyebrow: `Five steps`,
+  heading: `How it *works*`,
+  lede: `From the first walk-through to the last screw, I handle every step. You walk in, and it's finished.`,
   steps: [
     {
       name: `The walk-through`,
-      body: `I come to your home and walk it with you, room by room. We talk about how you live and what you notice. It's complimentary, and there's no obligation.`,
+      meta: `Complimentary · room by room · no obligation`,
+      body: `I visit your home and look for the builder-grade details hiding in plain sight. We talk about how you live and how you want the house to feel.`,
     },
     {
       name: `The edit`,
-      body: `I come back with a short, considered edit: the pieces I'd change, the makers I'd ask, and samples, drawings or photos so you can see it before anything is made.`,
+      meta: `Pieces · makers · samples or drawings`,
+      body: `A short, considered set of pieces and makers, with samples or drawings. When nothing existing is right, I commission something new.`,
     },
     {
       name: `One clear price`,
-      body: `You get one price for the whole project, covering the pieces, delivery and installation. No line items to decode, no stack of invoices.`,
+      meta: `Pieces · delivery · installation`,
+      body: `Pieces, delivery and installation together, in one number. No open-ended bill.`,
     },
     {
       name: `The install`,
-      body: `Licensed installers put every piece in place, and I oversee it from start to finish. You don't have to manage anyone.`,
+      meta: `Licensed installers · I oversee it`,
+      body: `Licensed installers put every piece in place, and I oversee it. You come home to it finished.`,
     },
     {
       name: `The story card`,
-      body: `Every piece arrives with a card naming the maker who made it, the materials and the story behind it. It stays with the home, an heirloom from the day it's installed.`,
+      meta: `Every piece names its maker`,
+      body: `Every piece arrives with a card naming its maker and how it was made, so the story stays with the piece.`,
     },
   ],
+  // The sample card shown under step 5.
+  storyCard: {
+    label: `Story card · sample layout`,
+    piece: `[Piece name]`,
+    maker: `Made by [Maker name], [Town]`,
+    method: `[Material and method, in two short lines.]`,
+    member: `Member of the Alliance`,
+  },
   closing: {
-    heading: `It starts with a walk-through.`,
-    body: `Founding clients get theirs complimentary.`,
+    heading: `It starts with a *walk-through.*`,
+    body: `I'm taking 25 homes in our first season.`,
   },
 };
 
 // ── Makers page ──────────────────────────────────────────────────────────────
 export const makersPage = {
   title: `Makers`,
-  description: `Members of the Alliance are independent artisans: smiths, woodworkers, potters, stone carvers and lighting makers. Apply to join.`,
-  heading: `Members of the Alliance.`,
-  lede: `The makers in the Alliance are independent artisans: smiths, woodworkers, potters, stone carvers, plasterers and lighting makers. I bring them commissions in homes that will value the work, and I take care of everything around it.`,
+  description: `Members of the Alliance are independent artisans: smiths, woodworkers, potters, stone carvers, plasterers and lighting makers. Apply to join.`,
+  eyebrow: `For makers`,
+  heading: `Members of *the Alliance.*`,
+  lede: `Members of the Alliance are independent artisans: smiths, woodworkers, potters, stone carvers, plasterers and lighting makers. Many work alone or in small shops, often a few miles from the homes that need them. I bring their work into homes whose owners chose handmade on purpose.`,
+  applyLink: `Apply to join`,
   offer: {
-    heading: `What membership means`,
+    heading: `What membership *means*`,
     items: [
-      `Commissions from clients who chose handmade on purpose.`,
-      `Your name on every piece, on a card that stays with the home.`,
-      `No chasing clients, coordinating installs or managing deliveries. I handle that.`,
-      `Pricing that respects the time the work takes.`,
+      `Commissions from clients who chose handmade on purpose`,
+      `Your name on every piece`,
+      `No chasing clients or managing installs`,
+      `Pricing that respects the time the work takes`,
     ],
   },
   form: {
-    heading: `Apply to join`,
+    heading: `Apply *to join*`,
     intro: `Tell me a little about your work. I read every application myself.`,
     fields: {
-      name: `Your name`,
-      email: `Email`,
-      craft: `Your craft`,
-      craftHint: `For example: blacksmith, woodturner, ceramicist`,
-      location: `Where you work`,
-      website: `Website or Instagram`,
-      note: `A short note`,
-      noteHint: `What you make, and what you'd love to make for a home like this.`,
+      name: { label: `Your name`, error: `Please add your name.` },
+      email: { label: `Email`, error: `Please add your email.` },
+      craft: {
+        label: `Your craft`,
+        hint: `For example: blacksmith, ceramicist, woodturner, plasterer.`,
+        error: `Please tell me your craft.`,
+      },
+      location: { label: `Where you work`, hint: `Town or region is fine.`, error: `Please tell me where you work.` },
+      website: { label: `Website or Instagram` },
+      note: { label: `A short note`, hint: `What you make, and what you'd love to make for a home like this.` },
     },
     submit: `Send my application`,
     sending: `Sending…`,
-    successHeading: `Thank you.`,
+    successHeading: `Thank *you.*`,
     success: `Your application is in. I look at every one myself, and I'll be in touch.`,
   },
 };
@@ -332,35 +330,44 @@ export const makersPage = {
 export const waitlistPage = {
   title: `The Founding Client List`,
   description: `I'm taking 25 homes in the first season. Join the Founding Client List for a complimentary walk-through and first pick of the founding collection.`,
-  heading: `The Founding Client List`,
+  eyebrow: `First season · 25 homes`,
+  heading: `The Founding *Client List*`,
   lede: `I'm taking 25 homes in our first season. Join the list and I'll reach out personally to schedule your complimentary walk-through.`,
   perksHeading: `Founding clients get`,
   perks: [
     `A complimentary walk-through`,
     `First pick of the founding collection pieces`,
     `A maker card for every piece`,
-    `Founding client pricing on their first project`,
+    `Founding client pricing on your first project`,
   ],
   form: {
     fields: {
-      name: `Full name`,
-      email: `Email`,
-      phone: `Phone`,
-      city: `City or area`,
-      homeType: `Type of home`,
-      bothers: `What bothers you most?`,
-      bothersHint: `Pick any that apply.`,
-      timing: `Timing`,
-      heardFrom: `How did you hear about us?`,
+      name: { label: `Full name`, error: `Please add your full name.` },
+      email: { label: `Email`, error: `Please add your email, so I can reach you.` },
+      phone: { label: `Phone` },
+      city: { label: `City or area`, error: `Please add your city or area.` },
+      homeType: { label: `Type of home`, note: `pick one`, error: `Please choose a type of home.` },
+      bothers: { label: `What bothers you most?`, note: `optional, pick any` },
+      timing: { label: `Timing`, note: `pick one`, error: `Please choose a timing.` },
+      heardFrom: { label: `How did you hear about us?` },
     },
-    optional: `optional`,
-    choose: `Choose one`,
     submit: `Join the list`,
     sending: `Sending…`,
-    successHeading: `You're on the list.`,
-    success: `I read every signup myself, and I'll be in touch within a few days to set up your walk-through. In the meantime, take a look around your home. You may start noticing things.`,
+    successHeading: `You're on *the list.*`,
+    success: `I read every signup myself, and I'll be in touch within a few days to set up your walk-through.
+
+In the meantime, take a look around your home. You may start noticing things.`,
+    backLink: `Back to the home page`,
   },
   privacy: `I'll only use your details to contact you about A Particular Alliance. I never sell or share them.`,
+};
+
+// Shared bits of the two forms.
+export const formText = {
+  requiredNote: `Fields marked * are required.`,
+  errorSummary: `Please fill in the fields marked below.`,
+  optional: `optional`,
+  choose: `Choose one`,
 };
 
 // The answer choices. Changing these also needs a matching database change,
@@ -374,13 +381,13 @@ export const choices = {
 
 // ── Messages shown when something goes wrong ─────────────────────────────────
 export const errors = {
-  required: `Please fill in the fields marked as required.`,
+  required: `Please fill in the fields marked below.`,
   email: `That email address doesn't look quite right.`,
   network: `Something went wrong sending that. Please try again in a moment.`,
 };
 
 export const notFound = {
-  heading: `This page isn't here.`,
+  heading: `This page isn't *here.*`,
   body: `It may have moved, or the link may be off by a letter.`,
   link: `Back to the home page`,
 };

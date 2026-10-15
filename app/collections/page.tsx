@@ -11,11 +11,12 @@ export const metadata = {
 };
 
 const TONES = ['linen', 'stone', 'plaster', 'olive', 'stone'] as const;
+const ROMAN = ['I', 'II', 'III', 'IV', 'V'];
 
 export default function CollectionsPage() {
   return (
     <>
-      <PageIntro heading={c.heading} lede={c.lede} />
+      <PageIntro eyebrow={c.eyebrow} heading={c.heading} lede={c.lede} />
 
       <nav aria-label="Collections" className="wrap mt-10">
         <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
@@ -29,29 +30,30 @@ export default function CollectionsPage() {
         </ul>
       </nav>
 
-      <div className="mt-20 space-y-28 sm:mt-28 sm:space-y-40">
+      <div className="mt-20 space-y-24 sm:mt-28 sm:space-y-36">
         {collections.map((col, i) => (
           <section
             key={col.slug}
             id={col.slug}
             aria-labelledby={`${col.slug}-name`}
-            className="wrap grid scroll-mt-8 items-center gap-12 lg:grid-cols-2 lg:gap-24"
+            className="wrap grid scroll-mt-8 items-center gap-10 lg:grid-cols-2 lg:gap-24"
           >
-            <Photo photo={col.photo} ratio="aspect-[4/5]" tone={TONES[i]} className={i % 2 ? 'lg:order-last' : ''} />
+            <Photo
+              photo={col.photo}
+              arch
+              ratio="aspect-[4/5]"
+              tone={TONES[i]}
+              className={`mx-auto w-full max-w-md lg:max-w-none ${i % 2 ? 'lg:order-last' : ''}`}
+            />
             <div>
-              <p className="eyebrow">Collection {['one', 'two', 'three', 'four', 'five'][i]}</p>
+              <p className="eyebrow">
+                {c.numberLabel} {ROMAN[i]}
+              </p>
               <h2 id={`${col.slug}-name`} className="display mt-5 text-[2.8rem] sm:text-6xl">
                 {col.name}
               </h2>
               <p className="mt-3 font-serif text-2xl italic text-muted">{col.mood}</p>
-              <p className="mt-8 max-w-[46ch] text-muted">{col.description}</p>
-              <ul className="mt-8 flex flex-wrap gap-2">
-                {col.pieces.map((p) => (
-                  <li key={p} className="border border-line px-3 py-1 text-sm text-muted">
-                    {p}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-8 max-w-[40ch] text-lg text-muted">{col.description}</p>
             </div>
           </section>
         ))}

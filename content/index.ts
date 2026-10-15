@@ -34,5 +34,6 @@ export const makersPage = typeset(raw.makersPage);
 export const waitlistPage = typeset(raw.waitlistPage);
 export const errors = typeset(raw.errors);
 export const notFound = typeset(raw.notFound);
+export const formText = typeset(raw.formText);
 // Not typeset: these must match the database's allowed values exactly.
 export const choices = raw.choices;

@@ -38,10 +38,21 @@ First person ("I"), American spelling, warm and plain. Never criticize the
 client's taste; the builder chose the details. Never use: bespoke, curated,
 vendor, supplier, product, deal, discount, affordable luxury, generic, boring.
 
-## Design next step
-Sara is designing the look in Claude Design. When she brings the export,
-rebuild its design INTO this app (keep the forms, database, email and the
-one-file copy). Do not drop the export in as-is: its forms would not save.
+## Design
+The Claude Design pass (2026-10-15) is built in: arched photos
+(`<Photo arch>`), before/after switch plates, swipeable collections, the
+"25" closing, step details and the story card, per-field form errors, and
+your signature on the confirmations. Claude Design exports are a blueprint:
+rebuild them INTO this app (keep the forms, database, email and the one-file
+copy). Never drop an export in as-is: its forms would not save.
+
+- `*stars*` in `site.ts` set words in italics (`components/Emph.tsx`), which
+  also keeps hyphenated words like "walk-through" on one line.
+- Cormorant's default numerals are old-style (a "1" reads as a Roman "I").
+  Any number set in the serif needs the `nums` class.
+- Next, at Sara's request: motion (gentle reveal on scroll), photo hover
+  movement, and an animated wordmark/logo. Respect
+  `prefers-reduced-motion` for all of it.
 
 ## Sandbox note
 Cloud sessions may be unable to reach `*.supabase.co`. Test forms against a

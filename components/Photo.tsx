@@ -15,6 +15,7 @@ export default function Photo({
   photo,
   ratio = 'aspect-[4/5]',
   tone = 'linen',
+  arch = false,
   priority = false,
   sizes = '(min-width: 1024px) 50vw, 100vw',
   className = '',
@@ -22,13 +23,16 @@ export default function Photo({
   photo: PhotoSpec;
   ratio?: string;
   tone?: keyof typeof TONES;
+  arch?: boolean;
   priority?: boolean;
   sizes?: string;
   className?: string;
 }) {
+  // The arch: a fully rounded top, square bottom, like a doorway.
+  const shape = arch ? 'rounded-t-[999px]' : '';
   if (photo.file) {
     return (
-      <div className={`relative overflow-hidden ${ratio} ${className}`}>
+      <div className={`relative overflow-hidden ${ratio} ${shape} ${className}`}>
         <Image src={`/photos/${photo.file}`} alt={photo.alt} fill sizes={sizes} priority={priority} className="object-cover" />
       </div>
     );
@@ -37,7 +41,7 @@ export default function Photo({
     <div
       role="img"
       aria-label={`Photo coming soon: ${photo.alt}`}
-      className={`relative flex items-end overflow-hidden ${ratio} ${TONES[tone]} ${className}`}
+      className={`relative flex items-end overflow-hidden ${ratio} ${shape} ${TONES[tone]} ${className}`}
     >
       <div
         aria-hidden

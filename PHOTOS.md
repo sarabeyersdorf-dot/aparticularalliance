@@ -1,28 +1,30 @@
 # Photo shot list
 
-Thirteen photos, plus a logo later. Shoot in soft, natural light;
-avoid any visible brand names or logos on products.
+Eleven photos. Shoot in soft, natural light, and avoid any visible brand
+names or logos.
 
-**Size:** at least 2000 px on the long side; JPG is fine. Portrait (taller
-than wide) unless noted.
+**Size:** at least 2000 px on the long side; JPG is fine. Shoot portrait
+(taller than wide) unless noted.
+
+**The arch:** photos marked *arch* are shown with a rounded top, like a
+doorway. Keep the subject in the middle and away from the top corners,
+which get cut off.
 
 | # | Name in `content/site.ts` | Where it appears | What to shoot |
 |---|---|---|---|
-| 1 | `hero` | Home, top | A handmade brass door lever on a plaster wall, soft morning light |
-| 2 | `problem` | Home, "The problem" (**square**) | Close-up of a plain plastic switch plate in a beautiful room |
-| 3 | `story` | The Alliance, "Where it began" | You walking through a home, looking closely at a detail |
-| 4 | `alliance` | The Alliance, "How it works" (**square**) | A maker's hands at work: forging, turning or throwing |
-| 5 | `walkthrough` | How it works | A walk-through in progress: notebook and samples on a kitchen island |
-| 6 | `storyCard` | How it works, desktop only (**landscape**) | The maker story card beside a finished piece |
-| 7 | `makers` | Makers | A maker's workshop: tools on the wall, a piece half finished |
-| 8 | `waitlist` | Founding Client List, desktop only (**landscape**) | A finished detail in a lived-in home: a ceramic lamp lit at dusk |
-| 9 | Gilt & Grain `photo` | Home + Collections | Brass cabinet pulls on a hand-finished wood drawer front |
-| 10 | Ore & Oak `photo` | Home + Collections | Forged iron hardware on a reclaimed oak door |
-| 11 | Brass & Burl `photo` | Home + Collections | A sculptural light fixture above a burl wood table |
-| 12 | Gilt & Loam `photo` | Home + Collections | A pottery lamp against a hand-troweled plaster wall |
-| 13 | Marble & Moss `photo` | Home + Collections | A carved stone planter with moss or a fern on a windowsill |
+| 1 | `hero` (*arch*) | Home, top | A handmade brass door lever on a plaster wall, soft morning light |
+| 2 | `before` | Home, "The problem" | A plastic switch plate, straight on |
+| 3 | `after` | Home, "The problem" | A hand-carved walnut switch plate, straight on (frame it the same as #2, so they read as a pair) |
+| 4 | `alliance` (*arch*) | The Alliance, top | A maker's hands at a workbench, wood shavings and hand tools, warm side light |
+| 5 | `walkthrough` (**landscape**) | How it works, step 1 | You in a client's entry, notebook in hand, looking at a door lever |
+| 6 | `makers` (*arch*) | Makers, top | A potter at the wheel in a small foothill studio, clay on the hands, face out of frame |
+| 7 | Gilt & Grain `photo` (*arch*) | Home + Collections | Brass cabinet pulls and a door lever on hand-finished oak, close and warm |
+| 8 | Ore & Oak `photo` (*arch*) | Home + Collections | A forged iron fireplace set against native foothill stone and reclaimed oak |
+| 9 | Brass & Burl `photo` (*arch*) | Home + Collections | A sculptural brass chandelier above a figured burl-wood table, evening light |
+| 10 | Gilt & Loam `photo` (*arch*) | Home + Collections | Hand-thrown ceramic vessels and a pottery lamp in front of a textured plaster wall |
+| 11 | Marble & Moss `photo` (*arch*) | Home + Collections | A carved stone planter with ferns on a kitchen windowsill, cool morning light |
 
-Photos 9–13 appear on two pages, so they're your most important.
+Photos 7–11 appear on two pages, so they're your most important.
 
 **Link-preview image** (`public/og.png`): the picture that shows when the
 site is shared by text, Instagram or Facebook. It's currently the name and

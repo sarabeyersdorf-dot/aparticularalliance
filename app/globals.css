@@ -79,3 +79,10 @@ body {
   .field:focus { @apply border-brass outline-none; box-shadow: 0 0 0 1px var(--color-brass); }
   .field[aria-invalid="true"] { border-color: #8f3b2a; }
 }
+
+/* Modern (lining) numerals. Cormorant's default old-style figures make a
+   "1" look like a Roman "I" and drop the "3" and "5" below the line. */
+.nums {
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+}

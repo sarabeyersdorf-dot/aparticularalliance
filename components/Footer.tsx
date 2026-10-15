@@ -9,18 +9,11 @@ export default function Footer() {
         <div>
           <Wordmark />
           <p className="mt-4 font-serif text-xl italic text-muted">{site.footerTagline}</p>
-          {(site.contactEmail || site.instagram) && (
-            <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-              {site.contactEmail && (
-                <a className="link" href={`mailto:${site.contactEmail}`}>
-                  {site.contactEmail}
-                </a>
-              )}
-              {site.instagram && (
-                <a className="link" href={site.instagram} rel="noopener">
-                  Instagram
-                </a>
-              )}
+          {site.contactEmail && (
+            <p className="mt-6 text-sm">
+              <a className="link" href={`mailto:${site.contactEmail}`}>
+                {site.contactEmail}
+              </a>
             </p>
           )}
         </div>
@@ -33,11 +26,18 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            {site.instagram && (
+              <li>
+                <a href={site.instagram} rel="noopener" className="text-muted no-underline hover:text-ink">
+                  Instagram
+                </a>
+              </li>
+            )}
           </ul>
         </nav>
       </div>
       <div className="wrap pb-10 text-xs text-muted">
-        © {new Date().getFullYear()} {site.name}
+        © {new Date().getFullYear()} {site.name}. {site.footerCredit}
       </div>
     </footer>
   );
