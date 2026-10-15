@@ -95,9 +95,9 @@ export const collections = [
     description: `Warm brass and hand-finished wood: cabinet pulls, door levers, switch plates, house numbers.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
-      file: ``,
+      file: `gilt-and-grain-pull.jpg`,
       shot: `A hand-forged brass cabinet pull on a hand-oiled white oak drawer, warm morning light`,
-      alt: `A hand-forged brass cabinet pull on a white oak drawer front`,
+      alt: `A hand-hammered brass pull on a white oak drawer in warm sunlight`,
     },
     // The Collections page.
     photo: {
@@ -113,9 +113,9 @@ export const collections = [
     description: `Forged iron, reclaimed oak, native stone from Sierra foothill makers.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
-      file: ``,
+      file: `ore-and-oak-hook.jpg`,
       shot: `A hand-forged black iron hook on a reclaimed oak beam, fieldstone wall behind`,
-      alt: `A hand-forged iron hook on a weathered oak beam beside a stone wall`,
+      alt: `A hand-forged iron hook on a weathered oak beam beside a fieldstone wall`,
     },
     // The Collections page.
     photo: {
@@ -149,9 +149,9 @@ export const collections = [
     description: `Hand-thrown ceramics, plaster finishes, textured walls, pottery lamps.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
-      file: ``,
+      file: `gilt-and-loam-lamp.jpg`,
       shot: `A hand-thrown terracotta lamp with a linen shade against blush lime plaster`,
-      alt: `A hand-thrown ceramic lamp with a linen shade against a blush plaster wall`,
+      alt: `A speckled terracotta pottery lamp with a linen shade against a blush plaster wall`,
     },
     // The Collections page.
     photo: {
@@ -167,15 +167,15 @@ export const collections = [
     description: `Carved stone vessels, bath and kitchen accents, planters.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
-      file: ``,
+      file: `marble-and-moss-fern.jpg`,
       shot: `A carved stone vessel with trailing maidenhair ferns on a honed stone ledge`,
-      alt: `A carved stone vessel spilling with maidenhair ferns on a stone ledge`,
+      alt: `Maidenhair ferns spilling from a hand-carved stone vessel on a honed stone ledge`,
     },
     // The Collections page.
     photo: {
-      file: ``,
+      file: `marble-and-moss-windowsill.jpg`,
       shot: `A carved stone planter with ferns on a kitchen windowsill, cool morning light`,
-      alt: `A carved stone planter holding ferns on a kitchen windowsill`,
+      alt: `A carved stone planter of ferns on a kitchen windowsill beside a carved stone fruit bowl`,
     },
   },
 ];
