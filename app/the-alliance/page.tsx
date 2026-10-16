@@ -27,7 +27,17 @@ export default function AlliancePage() {
         <Photo photo={photos.alliance} reveal={2} arch ratio="aspect-[4/5]" tone="linen" className="mx-auto w-full max-w-md lg:max-w-none" />
       </section>
 
-      <section {...reveal(0)} aria-labelledby="began" className="narrow mt-24 sm:mt-36">
+      <section {...reveal(0)} aria-labelledby="name" className="narrow mt-24 sm:mt-36">
+        <h2 id="name" className="display text-[2.2rem] sm:text-5xl">
+          <Emph text={c.name.heading} />
+        </h2>
+        <Paragraphs text={c.name.body} className="mt-8 text-lg text-muted" />
+        <p className="mt-8 border-l-2 border-brass-soft pl-5 font-serif text-xl leading-snug sm:text-2xl">
+          <Emph text={c.name.members} />
+        </p>
+      </section>
+
+      <section {...reveal(0)} aria-labelledby="began" className="narrow mt-24 sm:mt-32">
         <h2 id="began" className="display text-[2.2rem] sm:text-5xl">
           <Emph text={c.began.heading} />
         </h2>
@@ -39,10 +49,11 @@ export default function AlliancePage() {
           <h2 {...reveal(0)} id="beliefs" className="display text-[2.2rem] sm:text-5xl">
             <Emph text={c.beliefs.heading} />
           </h2>
-          <ul className="mt-12 grid gap-x-16 sm:grid-cols-2">
+          <ul className="mt-12 grid gap-x-16 sm:grid-cols-2 lg:grid-cols-3">
             {c.beliefs.items.map((b, i) => (
-              <li key={b} {...reveal(i)} className="border-t border-line py-7 font-serif text-[1.65rem] leading-snug sm:text-3xl">
-                {b}
+              <li key={b.name} {...reveal(i % 3)} className="border-t border-line py-7">
+                <h3 className="display text-[1.65rem] leading-snug sm:text-3xl">{b.name}</h3>
+                <p className="mt-3 text-muted">{b.body}</p>
               </li>
             ))}
           </ul>

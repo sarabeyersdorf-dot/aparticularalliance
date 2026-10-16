@@ -114,3 +114,12 @@ after deploying.
   (`INTERESTS` in `lib/forms.ts`, mirrored by the DB CHECK). Both Mischief
   tags pre-tick "Something playful (Mischief & Mortar)".
 - Voice for this line also avoids: quirky, wacky, novelty, gimmick, cheap.
+
+## The Lore (2026-10-16)
+`LORE.md` is Sara's brand story (name, origin, beliefs, collections, voice).
+It is the source for the Alliance page ("The name", "Where it began", the six
+beliefs), the Collections page descriptions and How it works step 5. The
+site keeps its own rules over the doc's: first person "I" (the doc says
+"we" in places) and none of the banned words (the doc's "vendors" and
+"curated proposal" were reworded). The Alliance page closes on "That's the
+*particular* in the Alliance."; "Our hand. Your name." is retired from it.

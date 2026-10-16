@@ -98,7 +98,7 @@ export const collections = [
     slug: `gilt-and-grain`,
     name: `Gilt & Grain`,
     mood: `The touchpoints.`,
-    description: `Warm brass and hand-finished wood: cabinet pulls, door levers, switch plates, house numbers.`,
+    description: `Warm brass meets hand-finished wood in the places your hands go every day: cabinet pulls, door levers, switch plates, house numbers. This is where most homes begin with me, because it changes how a house feels within a single afternoon.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
       file: `gilt-and-grain-pull.jpg`,
@@ -116,7 +116,7 @@ export const collections = [
     slug: `ore-and-oak`,
     name: `Ore & Oak`,
     mood: `Gold Country, made by hand.`,
-    description: `Forged iron, reclaimed oak, native stone from Sierra foothill makers.`,
+    description: `Pieces from makers in the Sierra foothills, where gold once ran through quartz and oak still covers the hills. Forged iron, reclaimed oak, native stone. Rooted, honest and a little rugged.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
       file: `ore-and-oak-hook.jpg`,
@@ -134,7 +134,7 @@ export const collections = [
     slug: `brass-and-burl`,
     name: `Brass & Burl`,
     mood: `The statement.`,
-    description: `Sculptural lighting, rare figured woods, often commissioned from scratch.`,
+    description: `Sculptural lighting, rare figured woods, and the one piece every guest asks about. Often commissioned from scratch.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
       file: `brass-and-burl-pendant.jpg`,
@@ -152,7 +152,7 @@ export const collections = [
     slug: `gilt-and-loam`,
     name: `Gilt & Loam`,
     mood: `Earth, refined.`,
-    description: `Hand-thrown ceramics, plaster finishes, textured walls, pottery lamps.`,
+    description: `Hand-thrown ceramics, plaster finishes, textured walls and pottery lamps. Soft color and natural texture for homes that have been beige too long.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
       file: `gilt-and-loam-lamp.jpg`,
@@ -170,7 +170,7 @@ export const collections = [
     slug: `marble-and-moss`,
     name: `Marble & Moss`,
     mood: `Stone and living things.`,
-    description: `Carved stone vessels, bath and kitchen accents, planters.`,
+    description: `Carved stone vessels, bath and kitchen accents, planters, and pieces that bring the outdoors in. Cool, calm and quietly luxurious.`,
     // The Home page card ("Choose a feeling").
     cardPhoto: {
       file: `marble-and-moss-fern.jpg`,
@@ -309,24 +309,39 @@ export const alliancePage = {
   eyebrow: `The Alliance`,
   heading: `Three parties, *one standard.*`,
   lede: `The client brings the standards. The maker brings the craft. I bring the eye, and everything in between.`,
+  // "The name", from the Lore.
+  name: {
+    heading: `The *name*`,
+    body: `A particular person notices. They have standards, and they don't settle for whatever came with the house. That is who I work for, and it is how I work.
+
+An alliance is a few parties who are better together than apart. In every home I touch, the alliance is three: the client, the maker, and me, the one who brings them together. The makers bring the craft. I bring the eye. You get a home that finally reflects your own particular taste.`,
+    members: `*Members of the Alliance.* My makers are members, chosen for their craft and named on every piece they make.`,
+  },
   began: {
     heading: `Where it *began*`,
-    body: `I've walked through hundreds of homes as a real estate broker, some of them well over a million dollars. Again and again, I noticed the same thing. The square footage was there. The view was there. But the details told a different story: the same plastic switch plates, the same stamped vent covers, the same light fixtures you could find in any new subdivision.
+    body: `I have walked through hundreds of homes as a real estate broker. Some of them sold for well over a million dollars. And again and again, I noticed the same thing.
 
-Nobody did anything wrong. Builders choose what is fast, and most buyers never get the chance to choose otherwise. They move in, they get busy, and the house never quite becomes theirs.
+The square footage was there. The view was there. The price was there. But the details told a different story. The same plastic switch plates. The same stamped vent covers. The same light fixtures you could find in any new subdivision. Beautiful homes, wearing builder-grade clothes.
 
-At the same time, I kept meeting extraordinary makers, often just a few miles from the homes that needed them, working at a level most homeowners never see. The two worlds almost never met. A Particular Alliance is where they meet.`,
+Nobody did anything wrong. Builders choose what is fast and affordable, and most buyers never get the chance to choose otherwise. They move in, they get busy, and the house never quite becomes theirs.
+
+At the same time, I kept meeting extraordinary makers. Metalworkers, ceramicists, woodworkers, glass artists, people making one-of-a-kind pieces by hand, often just a few miles from the homes that needed them.
+
+Great homes and great makers have always needed each other: homes waiting for character, and makers waiting for the right home for their work. What was missing was someone with the eye to bring them together, on purpose.`,
   },
   beliefs: {
     heading: `What we *believe*`,
     items: [
-      `The small things are the big things.`,
-      `Your taste was never the problem.`,
-      `Makers deserve their name on the work.`,
-      `One of a kind should not mean one more project to manage.`,
+      { name: `The details are the home.`, body: `People remember the brass pull warm under their hand, the light that glows instead of glares, the switch plate that feels like jewelry. Square footage is forgotten. Details are not.` },
+      { name: `Nothing should be repeated.`, body: `If you can find it in a catalog, it does not belong on my list. Every piece I place is handmade, limited, or made for you alone.` },
+      { name: `Makers deserve a patron.`, body: `Behind every piece is a person with a name and a craft. I pay them fairly and tell their stories.` },
+      { name: `Taste can be borrowed, then owned.`, body: `You do not need to know where to find a hand-forged bronze vent cover. That is my job. Once it is in your home, it is yours.` },
+      { name: `The credit belongs to you.`, body: `I work quietly. My name is not on the wall. Yours is.` },
+      { name: `Done means done.`, body: `I source, price, deliver and install. You do not chase deliveries or contractors. You walk in, and it is finished.` },
     ],
   },
-  tagline: `Our hand. *Your name.*`,
+  // The page's closing line.
+  tagline: `That's the *particular* in the Alliance.`,
   makersLink: `Members of the Alliance`,
 };
 
@@ -568,7 +583,7 @@ export const howPage = {
     {
       name: `The story card`,
       meta: `Every piece names its maker`,
-      body: `Every piece arrives with a card naming its maker and how it was made, so the story stays with the piece.`,
+      body: `Every piece arrives with a card naming its maker and how it was made, so you can tell its story to your guests.`,
     },
   ],
   // The sample card shown under step 5.
