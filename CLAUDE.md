@@ -114,6 +114,8 @@ after deploying.
   (`INTERESTS` in `lib/forms.ts`, mirrored by the DB CHECK). Both Mischief
   tags pre-tick "Something playful (Mischief & Mortar)".
 - Voice for this line also avoids: quirky, wacky, novelty, gimmick, cheap.
+- Never say "hand-drawn" (Sara, 2026-10-16): the custom art is made FROM the
+  client's own photos (pets, farm animals, people, places). Say so instead.
 
 ## The Lore (2026-10-16)
 `LORE.md` is Sara's brand story (name, origin, beliefs, collections, voice).

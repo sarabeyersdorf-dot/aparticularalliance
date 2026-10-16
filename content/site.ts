@@ -428,7 +428,7 @@ export const surfacesPage = {
       {
         title: `Murals & Large Prints`,
         line: `Original, large-scale artwork made for one wall in one home.`,
-        photo: { file: `surfaces-murals.jpg`, shot: `A hand-painted landscape mural across one wall of a sitting room`, alt: `A living room wall painted floor to ceiling with a sweeping hand-drawn mural of overlapping arcs in charcoal on cream`, concept: true },
+        photo: { file: `surfaces-murals.jpg`, shot: `A hand-painted landscape mural across one wall of a sitting room`, alt: `A living room wall painted floor to ceiling with a sweeping painted mural of overlapping arcs in charcoal on cream`, concept: true },
       },
       {
         title: `Plaster & Limewash`,
@@ -490,14 +490,14 @@ export const surfacesPage = {
 export const mischiefPage = {
   // What Google and link previews show.
   title: `Custom Wallpaper, Doorbells & Door Knockers | Mischief & Mortar`,
-  description: `Hand-drawn custom wallpaper, drawer surprises, and one-of-a-kind doorbells and door knockers, made by artisans and installed in California's Gold Country and Sacramento area.`,
+  description: `Custom wallpaper made from your own photos, drawer surprises, and one-of-a-kind doorbells and door knockers, made by artisans and installed in California's Gold Country and Sacramento area.`,
   eyebrow: `The playful side`,
   heading: `Mischief *& Mortar*`,
   lede: `Every beautiful home deserves a secret or two. A drawer that makes you smile. A doorbell nobody else has. Wallpaper starring your dog. Made by hand, made for you, and impossible to find anywhere else.`,
   heroPhoto: {
     file: `mischief-hero.jpg`,
-    shot: `A powder room papered in a hand-drawn pattern of the owner's own dogs, a brass sconce glowing. Portrait`,
-    alt: `A powder room papered in a hand-drawn repeating pattern of terriers, with a round brass mirror and a carved stone sink`,
+    shot: `A powder room papered in a custom pattern made from photos of the owner's own dogs, a brass sconce glowing. Portrait`,
+    alt: `A powder room papered in a custom repeating pattern of the family's terrier, with a round brass mirror and a carved stone sink`,
     concept: true,
   },
   heroButton: `Request a commission`,
@@ -509,8 +509,8 @@ export const mischiefPage = {
     items: [
       {
         title: `Custom Wallpaper`,
-        body: `Your dog, your chickens, your horses, your hometown or the land your house sits on, hand-drawn by an artist and turned into a repeating wallpaper made only for you. Perfect for a powder room, a mudroom, a nursery or a ceiling.`,
-        photo: { file: `mischief-wallpaper.jpg`, shot: `A mudroom papered in a hand-drawn repeat of the family's chickens and horses. Portrait`, alt: `A mudroom papered in a hand-drawn pattern of hens and roosters among wildflowers, above an oak bench and garden boots`, concept: true },
+        body: `Your dog, your chickens, your horses, your family, your hometown or the land your house sits on. Send me your photos, and an artist turns them into a repeating wallpaper made only for you. Perfect for a powder room, a mudroom, a nursery or a ceiling.`,
+        photo: { file: `mischief-wallpaper.jpg`, shot: `A mudroom papered in a custom repeat made from photos of the family's chickens and horses. Portrait`, alt: `A mudroom papered in a custom pattern of the family's hens and roosters among wildflowers, above an oak bench and garden boots`, concept: true },
       },
       {
         title: `Inside-the-Drawer Surprises`,
@@ -554,7 +554,7 @@ export const mischiefPage = {
   form: {
     eyebrow: `Commission request`,
     heading: `Tell me *the story.*`,
-    intro: `The four signatures are made to order. Tell me what you have in mind, and send a few photos if you like. I read every request myself.`,
+    intro: `The four signatures are made to order, and the art starts from your photos: your dog, your horses, your people, your place. Tell me what you have in mind and send a few. I read every request myself.`,
     fields: {
       name: { label: `Full name`, error: `Please add your full name.` },
       email: { label: `Email`, error: `Please add your email, so I can reach you.` },
