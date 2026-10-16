@@ -123,3 +123,20 @@ site keeps its own rules over the doc's: first person "I" (the doc says
 "we" in places) and none of the banned words (the doc's "vendors" and
 "curated proposal" were reworded). The Alliance page closes on "That's the
 *particular* in the Alliance."; "Our hand. Your name." is retired from it.
+
+## Moss & Murmur (2026-10-16)
+- `/outdoors` (`app/outdoors/page.tsx`), wording in `outdoorsPage`. Nav item
+  after Mischief; eighth collection `moss-and-murmur`; Home band
+  `home.outdoors` (full width) before the closing.
+- Accents for this line only: `moss` #3d4a33 (text, and the dark trust
+  band), `stone` #5f6b62 (secondary text), `lantern` #d8b56a (decorative on
+  paper; text only on moss). The `calm` wrapper slows its fade-ins.
+- Voice for this line also avoids: oasis, paradise, resort-style, backyard
+  makeover.
+- Waitlist: `outdoors text[]` ("Anything outdoors you're dreaming about?"),
+  bothers "Outdoor spaces (Moss & Murmur)", `?interest=outdoors` pre-ticks
+  it. Commission `wants` gained Water feature, Garden chime, Lanterns,
+  Garden sculpture. All mirrored by DB CHECKs (migration `moss_and_murmur`).
+- **The header now holds 8 links**: the full menu shows from 1280px (`xl`)
+  in a `max-w-7xl` header; below that it is the Menu button. A ninth link
+  will not fit; group the lines under one menu item before adding more.

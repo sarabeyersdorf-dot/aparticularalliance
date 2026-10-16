@@ -15,6 +15,10 @@
   /* Mischief & Mortar only: one extra accent, a deep cherry. */
   --color-cherry: #8b2635;      /* text and doodles (7.7:1 on paper, 6.9:1 on plaster) */
   --color-cherry-soft: #c45a68; /* decorative only, never text */
+  /* Moss & Murmur only: moss, stone and lantern gold. */
+  --color-moss: #3d4a33;     /* text and the dark band (8.4:1 on paper) */
+  --color-stone: #5f6b62;    /* secondary text (5:1 on paper) */
+  --color-lantern: #d8b56a;  /* decorative on paper; text only on moss (4.8:1) */
 
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-figtree), "Figtree", system-ui, sans-serif;
@@ -105,6 +109,14 @@ body {
       opacity 1s cubic-bezier(0.2, 0.65, 0.2, 1),
       transform 1.15s cubic-bezier(0.2, 0.65, 0.2, 1);
     transition-delay: var(--d, 0ms);
+  }
+  /* Moss & Murmur: slower and calmer. Things fade up gently, like dusk. */
+  html.motion .calm [data-reveal] {
+    transition-duration: 1.9s, 2.1s;
+    transition-delay: calc(var(--d, 0ms) * 1.6);
+  }
+  html.motion:not(.motion-fallback) .calm [data-reveal]:not(.is-in) {
+    transform: translateY(14px);
   }
 
   /* Wordmark: each word rises into place, then a brass hairline draws in

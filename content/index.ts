@@ -37,6 +37,7 @@ export const notFound = typeset(raw.notFound);
 export const formText = typeset(raw.formText);
 export const surfacesPage = typeset(raw.surfacesPage);
 export const mischiefPage = typeset(raw.mischiefPage);
+export const outdoorsPage = typeset(raw.outdoorsPage);
 export const conceptCaption = typeset(raw.conceptCaption);
 // Not typeset: these must match the database's allowed values exactly.
 export const choices = raw.choices;

@@ -100,3 +100,25 @@ every row above except these five, which still show "Photo to come":
 brass "841"; swap in a dedicated house-number image whenever you have one.
 The source images are 944 pixels tall, so the portrait crops are 755 × 944:
 fine on phones, slightly soft on a big screen. Larger exports are welcome.
+
+## Moss & Murmur (added 2026-10-16)
+
+Concept renderings, so each carries "A look we can create". Put them in
+Dropbox → A Particular Alliance → Website Pics → **Outdoors**. The page uses
+full-bleed photos, so these need to be WIDE and LARGE: export at least
+2400 pixels across if your image tool allows (the last batch came out
+944 pixels tall, which will look soft stretched edge to edge).
+
+| File in `public/photos/` | Where it appears | Shape and minimum size |
+|---|---|---|
+| `outdoors-hero.jpg` | /outdoors, top, full width: a dusk garden path toward a lantern and a gate in the hedge | Very wide 21:9, 2400 × 1030 |
+| `outdoors-water.jpg` | Sound: Water. A copper rain chain into a carved granite bowl | Wide 5:2, 2400 × 960 |
+| `outdoors-music.jpg` | Sound: Music. Bronze chimes from an oak branch over a stone bench | Wide 5:2, 2400 × 960 |
+| `outdoors-secret-garden.jpg` | Sight: Secret Gardens. A stone moon gate framing the foothills | Wide 5:2, 2400 × 960 |
+| `outdoors-rooms.jpg` | Touch: Outdoor Rooms. A handmade tile table and forged fire bowl at dusk | Wide 5:2, 2400 × 960 |
+| `outdoors-after-dark.jpg` | Light: After Dark. An uplit valley oak, copper path lights | Wide 5:2, 2400 × 960 |
+| `home-outdoors.jpg` | Home page band, "Step outside. Listen.": a stone basin at dusk | Wide 21:9, 2400 × 1030 (keep the subject in the top two-thirds; the words sit at the bottom) |
+| `moss-and-murmur.jpg` | Moss & Murmur collection card (Home + Collections): a moon gate at dusk | Portrait 4:5, 1600 × 2000 |
+
+On a phone the wide photos are cropped closer to the middle, so keep the
+main subject near the center.

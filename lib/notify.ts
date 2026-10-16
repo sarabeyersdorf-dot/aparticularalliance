@@ -42,6 +42,7 @@ function build(kind: Kind, row: Row) {
     surfaces: ` from the Surfaces page`,
     mischief: ` from the Mischief & Mortar page`,
     'mischief-box': ` asking about the Mischief Box`,
+    outdoors: ` from the Moss & Murmur page`,
   };
   const intro =
     kind === 'waitlist'
@@ -70,6 +71,7 @@ function build(kind: Kind, row: Row) {
           ['Type of home', row.home_type],
           ['What bothers them most', row.bothers],
           ['Surfaces they’re curious about', row.surfaces],
+          ['Outdoors they’re dreaming about', row.outdoors],
           ['Timing', row.timing],
           ['Heard about us', row.heard_from],
         ]

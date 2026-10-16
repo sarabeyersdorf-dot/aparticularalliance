@@ -42,6 +42,7 @@ export const nav = [
   { label: `Collections`, href: `/collections` },
   { label: `Surfaces`, href: `/surfaces` },
   { label: `Mischief`, href: `/mischief` },
+  { label: `Outdoors`, href: `/outdoors` },
   { label: `How it works`, href: `/how-it-works` },
   { label: `Makers`, href: `/makers` },
 ];
@@ -92,7 +93,7 @@ export const photos = {
   },
 };
 
-// ── The seven collections ──────────────────────────────────────────────────────
+// ── The eight collections ──────────────────────────────────────────────────────
 export const collections = [
   {
     slug: `gilt-and-grain`,
@@ -226,6 +227,27 @@ export const collections = [
       concept: true,
     },
   },
+  {
+    slug: `moss-and-murmur`,
+    name: `Moss & Murmur`,
+    mood: `The outdoor side.`,
+    description: `Water you can hear, music in the garden, secret spaces and light after dark.`,
+    // This collection has its own page.
+    href: `/outdoors`,
+    linkLabel: `See Moss & Murmur`,
+    cardPhoto: {
+      file: ``,
+      shot: `A round stone moon gate in a hedge at dusk, a lantern glowing on the path beyond. Portrait`,
+      alt: `A round stone moon gate in a clipped hedge at dusk, a lantern glowing on the path beyond`,
+      concept: true,
+    },
+    photo: {
+      file: ``,
+      shot: `A round stone moon gate in a hedge at dusk, a lantern glowing on the path beyond. Portrait`,
+      alt: `A round stone moon gate in a clipped hedge at dusk, a lantern glowing on the path beyond`,
+      concept: true,
+    },
+  },
 ];
 
 // ── Home page ────────────────────────────────────────────────────────────────
@@ -268,9 +290,9 @@ When they're made by hand, a house starts to feel like it was made for you.`,
     link: `Read about the Alliance`,
   },
   collections: {
-    eyebrow: `Seven collections`,
+    eyebrow: `Eight collections`,
     heading: `Each one a room *of its own.*`,
-    swipeHint: `Swipe to see all seven`,
+    swipeHint: `Swipe to see all eight`,
   },
   // The full-width ceiling band, between the collections and the closing.
   fifthWall: {
@@ -291,6 +313,17 @@ When they're made by hand, a house starts to feel like it was made for you.`,
       file: `home-knocker.jpg`,
       shot: `A hand-cast bronze door knocker shaped like a fox, on a painted front door, close up. Square`,
       alt: `A cast-bronze door knocker shaped like a hand holding a ball, on a dark wood front door`,
+      concept: true,
+    },
+  },
+  // The full-width garden band, after the playful one.
+  outdoors: {
+    line: `Step outside. *Listen.*`,
+    link: `Discover Moss & Murmur`,
+    photo: {
+      file: ``,
+      shot: `A hand-carved stone basin brimming with water in a fern garden at dusk, a lantern glowing nearby. Wide`,
+      alt: `A hand-carved stone basin brimming with water among ferns at dusk, a handmade lantern glowing beside it`,
       concept: true,
     },
   },
@@ -348,8 +381,8 @@ Great homes and great makers have always needed each other: homes waiting for ch
 // ── Collections page ─────────────────────────────────────────────────────────
 export const collectionsPage = {
   title: `Collections`,
-  description: `Seven collections of handmade, one-of-a-kind pieces for the home: Gilt & Grain, Ore & Oak, Brass & Burl, Gilt & Loam, Marble & Moss, Paper & Plaster and Mischief & Mortar.`,
-  eyebrow: `Seven collections`,
+  description: `Eight collections of handmade, one-of-a-kind pieces for the home and garden: Gilt & Grain, Ore & Oak, Brass & Burl, Gilt & Loam, Marble & Moss, Paper & Plaster, Mischief & Mortar and Moss & Murmur.`,
+  eyebrow: `Eight collections`,
   heading: `Choose by *feeling.*`,
   lede: `Each collection is a mood, so you can choose by feeling instead of by catalog number.`,
   numberLabel: `Collection`,
@@ -552,6 +585,86 @@ export const mischiefPage = {
   },
 };
 
+// ── Moss & Murmur page (/outdoors) ───────────────────────────────────────────
+// Every photo here is a rendering for now, so each keeps `concept: true`.
+export const outdoorsPage = {
+  // What Google and link previews show.
+  title: `Garden Water Features, Secret Gardens & Outdoor Lighting | Moss & Murmur`,
+  description: `Hand-carved water features, hidden garden music, secret garden spaces and handmade outdoor lighting, fire-wise and water-wise, for homes in California's Gold Country and Sacramento area.`,
+  eyebrow: `The outdoor side`,
+  heading: `Moss *& Murmur*`,
+  lede: `The best outdoor spaces aren't seen all at once. They're discovered: the sound of water around a corner, a gate in the hedge, a chime tuned to a chord you chose. I bring that sense of discovery to the land around your home.`,
+  heroPhoto: {
+    file: ``,
+    shot: `A garden path at dusk curving past ferns and oaks toward a glowing lantern and a gate in the hedge. Very wide`,
+    alt: `A gravel path at dusk curving through ferns and oaks toward a gate in a hedge, lit by a handmade lantern`,
+    concept: true,
+  },
+  intro: `Every piece is made by Members of the Alliance (stone carvers, metalworkers, ceramicists and woodworkers) and installed by licensed landscape and electrical partners. All of it is designed for the Gold Country and the Sierra foothills: fire-wise, water-wise and rooted in the land.`,
+  senses: {
+    eyebrow: `The five senses`,
+    examplesLabel: `For example`,
+    items: [
+      {
+        sense: `Sound`,
+        title: `Water`,
+        body: `Water you hear before you see it. Hand-carved stone basins, narrow rills that follow a path, a copper rain chain singing into a granite bowl, a still pool that holds the sky.`,
+        examples: [`Carved stone basin`, `Stone rill`, `Copper rain chain`, `Reflecting pool`],
+        photo: { file: ``, shot: `A copper rain chain spilling into a carved granite bowl among ferns. Wide`, alt: `A copper rain chain spilling water into a hand-carved granite bowl among ferns`, concept: true },
+      },
+      {
+        sense: `Sound`,
+        title: `Music`,
+        body: `Your own music, hidden in the garden. Speakers disguised as stone and planters, and wind chimes made by hand and tuned to a chord you choose.`,
+        examples: [`Hidden garden speakers`, `Hand-tuned chimes`, `The whisper bench`],
+        photo: { file: ``, shot: `Handmade bronze wind chimes hanging from an oak branch above a stone bench. Wide`, alt: `Handmade bronze wind chimes hanging from an oak branch above a stone garden bench`, concept: true },
+      },
+      {
+        sense: `Sight`,
+        title: `Secret Gardens`,
+        body: `A gate in the hedge. A round moon gate framing the view. A clipped green room with one chair and one lantern. Spaces that make you feel like you found something.`,
+        examples: [`Hidden gate`, `Moon gate`, `Hedge room`, `Reading nook in the slope`],
+        photo: { file: ``, shot: `A round stone moon gate in a hedge framing a view of golden foothills. Wide`, alt: `A round stone moon gate in a clipped hedge, framing a view of golden foothills`, concept: true },
+      },
+      {
+        sense: `Touch`,
+        title: `Outdoor Rooms`,
+        body: `Handmade tile tables, a sculptural fire bowl, an outdoor shower wrapped in stone, copper and ferns.`,
+        examples: [`Tile dining table`, `Forged fire bowl`, `Garden shower`],
+        photo: { file: ``, shot: `An outdoor dining table of handmade tile beside a forged iron fire bowl at dusk. Wide`, alt: `An outdoor table topped with handmade tile beside a forged iron fire bowl glowing at dusk`, concept: true },
+      },
+      {
+        sense: `Light`,
+        title: `After Dark`,
+        body: `Handmade lanterns, hammered-copper path lights, and one oak lit like the centerpiece it is. Gardens should be as beautiful at nine at night as at nine in the morning.`,
+        examples: [`Handmade lanterns`, `Copper path lights`, `Oak uplighting`, `Firefly hedge lights`],
+        photo: { file: ``, shot: `A great valley oak lit from below at night, hammered-copper path lights along a stone path. Wide`, alt: `A valley oak lit from below at night above a stone path lined with hammered-copper lights`, concept: true },
+      },
+    ],
+  },
+  mischief: {
+    line: `A stone fox peeking from the ferns. A tiny door at the base of a tree. A message carved into a stepping stone.`,
+    eyebrow: `A little mischief outside`,
+    link: `See Mischief & Mortar`,
+  },
+  begin: {
+    heading: `Three ways *to begin*`,
+    items: [
+      { name: `One Moment`, line: `A single feature: a carved basin, a tuned chime, a lantern-lit path.` },
+      { name: `The Secret Room`, line: `One hidden garden space, fully finished.` },
+      { name: `The Whole Grounds`, line: `A complete outdoor plan for the land around your home. Quoted per project.` },
+    ],
+  },
+  wise: {
+    heading: `Fire-wise and *water-wise*`,
+    body: `Here in the foothills, beautiful has to be smart too. I design near the house with stone, metal, gravel and fire-resistant plants that respect California's defensible-space rules, and every water feature recirculates, using very little water. You get a garden that's lovely, safe and easy to live with.`,
+  },
+  who: `Every outdoor project is installed by licensed landscape and electrical contractors I trust, and every handmade piece carries a card naming its maker.`,
+  closing: {
+    heading: `Let's find the secret *in your garden.*`,
+  },
+};
+
 // ── How it works page ────────────────────────────────────────────────────────
 export const howPage = {
   title: `How it works`,
@@ -643,6 +756,9 @@ export const makersPage = {
           `Enamel and small sculpture`,
           `Glass and neon`,
           `Decorative painting`,
+          `Garden and landscape design`,
+          `Outdoor lighting`,
+          `Sound and chime making`,
         ],
       },
       location: { label: `Where you work`, hint: `Town or region is fine.`, error: `Please tell me where you work.` },
@@ -679,6 +795,7 @@ export const waitlistPage = {
       homeType: { label: `Type of home`, note: `pick one`, error: `Please choose a type of home.` },
       bothers: { label: `What bothers you most?`, note: `optional, pick any` },
       surfaces: { label: `Any surfaces you're curious about?`, note: `optional, pick any` },
+      outdoors: { label: `Anything outdoors you're dreaming about?`, note: `optional, pick any` },
       timing: { label: `Timing`, note: `pick one`, error: `Please choose a timing.` },
       heardFrom: { label: `How did you hear about us?` },
     },
@@ -686,6 +803,7 @@ export const waitlistPage = {
     surfacesNote: `I've marked wallpaper and ceilings for you below. Change anything you like.`,
     // Shown when someone arrives from the Mischief & Mortar page.
     mischiefNote: `I've marked Mischief & Mortar for you below. Change anything you like.`,
+    outdoorsNote: `I've marked outdoor spaces for you below. Tell me what you're dreaming about.`,
     mischiefBoxNote: `You're asking about the Mischief Box. I've marked Mischief & Mortar below, and I'll bring box ideas to our first conversation.`,
     submit: `Join the list`,
     sending: `Sending…`,
@@ -710,12 +828,13 @@ export const formText = {
 // so ask Claude Code before editing them.
 export const choices = {
   homeType: [`New construction`, `Existing home`, `Second home`, `Short-term rental`],
-  bothers: [`Lighting`, `Hardware and switch plates`, `Vents and registers`, `Color and texture`, `A whole room`, `Wallpaper, tile or ceilings`, `Something playful (Mischief & Mortar)`],
+  bothers: [`Lighting`, `Hardware and switch plates`, `Vents and registers`, `Color and texture`, `A whole room`, `Wallpaper, tile or ceilings`, `Something playful (Mischief & Mortar)`, `Outdoor spaces (Moss & Murmur)`],
   surfaces: [`Ceilings`, `Powder room`, `Entry`, `Stairs`, `Closet`, `Bookshelves`, `Laundry`, `Fireplace`, `Not sure yet`],
   timing: [`This season`, `In the next 6 months`, `Just curious`],
+  outdoors: [`Water feature`, `Music`, `Secret garden`, `Outdoor room`, `Lighting`, `Not sure yet`],
   heardFrom: [`Realtor or friend`, `Instagram`, `Facebook`, `Other`],
   // The commission request form (Mischief & Mortar).
-  wants: [`Custom wallpaper`, `Drawer and cabinet surprises`, `Doorbell`, `Door knocker`, `Mischief Box`, `Something else`],
+  wants: [`Custom wallpaper`, `Drawer and cabinet surprises`, `Doorbell`, `Door knocker`, `Mischief Box`, `Water feature`, `Garden chime`, `Lanterns`, `Garden sculpture`, `Something else`],
   gift: [`Yes`, `No`],
   commissionTiming: [`Before the holidays`, `In the next 3 months`, `No rush`],
 } as const;

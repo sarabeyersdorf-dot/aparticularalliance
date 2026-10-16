@@ -28,6 +28,7 @@ export default function WaitlistForm() {
   }, []);
   const fromSurfaces = interest === 'surfaces';
   const fromMischief = interest === 'mischief' || interest === 'mischief-box';
+  const fromOutdoors = interest === 'outdoors';
 
   if (status === 'done') {
     return (
@@ -67,6 +68,7 @@ export default function WaitlistForm() {
       home_type: data.get('home_type'),
       bothers: data.getAll('bothers'),
       surfaces: data.getAll('surfaces'),
+      outdoors: data.getAll('outdoors'),
       interest,
       timing: data.get('timing'),
       heard_from: data.get('heard_from'),
@@ -93,7 +95,7 @@ export default function WaitlistForm() {
       <ChoiceGroup name="home_type" legend={F.homeType.label} note={F.homeType.note} options={choices.homeType} required error={errs.home_type} onEdit={clear} />
       {interest && (
         <p className="border-l-2 border-brass-soft pl-4 text-sm text-muted">
-          {interest === 'surfaces' ? f.surfacesNote : interest === 'mischief-box' ? f.mischiefBoxNote : f.mischiefNote}
+          {{ surfaces: f.surfacesNote, mischief: f.mischiefNote, 'mischief-box': f.mischiefBoxNote, outdoors: f.outdoorsNote }[interest]}
         </p>
       )}
       <ChoiceGroup
@@ -103,7 +105,15 @@ export default function WaitlistForm() {
         note={F.bothers.note}
         options={choices.bothers}
         multiple
-        defaultValues={fromSurfaces ? ['Wallpaper, tile or ceilings'] : fromMischief ? ['Something playful (Mischief & Mortar)'] : []}
+        defaultValues={
+          fromSurfaces
+            ? ['Wallpaper, tile or ceilings']
+            : fromMischief
+              ? ['Something playful (Mischief & Mortar)']
+              : fromOutdoors
+                ? ['Outdoor spaces (Moss & Murmur)']
+                : []
+        }
       />
       <ChoiceGroup
         key={`surfaces-${fromSurfaces}`}
@@ -114,6 +124,7 @@ export default function WaitlistForm() {
         multiple
         defaultValues={fromSurfaces ? ['Ceilings'] : []}
       />
+      <ChoiceGroup name="outdoors" legend={F.outdoors.label} note={F.outdoors.note} options={choices.outdoors} multiple />
       <ChoiceGroup name="timing" legend={F.timing.label} note={F.timing.note} options={choices.timing} required error={errs.timing} onEdit={clear} />
 
       <div>

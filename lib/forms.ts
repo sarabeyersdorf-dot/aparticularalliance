@@ -32,7 +32,7 @@ export function looksAutomated(body: Body): boolean {
 }
 
 // Where a waitlist signup arrived from (?interest=… on the button they pressed).
-export const INTERESTS = ['surfaces', 'mischief', 'mischief-box'] as const;
+export const INTERESTS = ['surfaces', 'mischief', 'mischief-box', 'outdoors'] as const;
 
 export type Result<T> = { ok: true; row: T } | { ok: false; error: 'required' | 'email' };
 
@@ -48,6 +48,8 @@ export function parseWaitlist(body: Body): Result<Record<string, unknown>> {
   const bothers = [...new Set(rawBothers.map((b) => oneOf(b, choices.bothers)).filter((b) => b !== null))];
   const rawSurfaces = Array.isArray(body.surfaces) ? body.surfaces : [];
   const surfaces = [...new Set(rawSurfaces.map((b) => oneOf(b, choices.surfaces)).filter((b) => b !== null))];
+  const rawOutdoors = Array.isArray(body.outdoors) ? body.outdoors : [];
+  const outdoors = [...new Set(rawOutdoors.map((b) => oneOf(b, choices.outdoors)).filter((b) => b !== null))];
   return {
     ok: true,
     row: {
@@ -58,6 +60,7 @@ export function parseWaitlist(body: Body): Result<Record<string, unknown>> {
       home_type,
       bothers,
       surfaces,
+      outdoors,
       interest: oneOf(body.interest, INTERESTS),
       timing,
       heard_from: oneOf(body.heard_from, choices.heardFrom),

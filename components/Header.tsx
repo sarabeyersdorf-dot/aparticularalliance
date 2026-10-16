@@ -20,30 +20,30 @@ export default function Header() {
 
   return (
     <header className="relative z-40 border-b border-line/70">
-      <div className="wrap flex items-center justify-between gap-6 py-6">
+      <div className="wrap flex items-center justify-between gap-6 py-6 xl:max-w-7xl">
         <Link href="/" className="no-underline" aria-label="A Particular Alliance, home">
           <Wordmark animate />
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-6 lg:flex xl:gap-9">
+        <nav aria-label="Main" className="hidden items-center gap-6 xl:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={pathname === item.href ? 'page' : undefined}
-              className="nav-link whitespace-nowrap text-[0.78rem] uppercase tracking-[0.14em] xl:text-[0.82rem] xl:tracking-[0.16em] text-muted no-underline transition-colors hover:text-ink aria-[current=page]:text-ink"
+              className="nav-link whitespace-nowrap text-[0.78rem] uppercase tracking-[0.14em] text-muted no-underline transition-colors hover:text-ink aria-[current=page]:text-ink"
             >
               {item.label}
             </Link>
           ))}
-          <Link href={navCta.href} className="link whitespace-nowrap text-[0.78rem] uppercase tracking-[0.14em] xl:text-[0.82rem] xl:tracking-[0.16em]">
+          <Link href={navCta.href} className="link whitespace-nowrap text-[0.78rem] uppercase tracking-[0.14em]">
             {navCta.label}
           </Link>
         </nav>
 
         <button
           type="button"
-          className="min-h-11 px-1 text-[0.8rem] uppercase tracking-[0.18em] text-ink lg:hidden"
+          className="min-h-11 px-1 text-[0.8rem] uppercase tracking-[0.18em] text-ink xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((o) => !o)}
@@ -56,7 +56,7 @@ export default function Header() {
         id="mobile-menu"
         aria-label="Main"
         hidden={!open}
-        className="absolute inset-x-0 top-full border-b border-line bg-paper lg:hidden"
+        className="absolute inset-x-0 top-full border-b border-line bg-paper xl:hidden"
       >
         <ul className="wrap flex flex-col py-4">
           {nav.map((item) => (
