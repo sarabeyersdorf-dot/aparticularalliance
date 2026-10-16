@@ -64,7 +64,7 @@ export const photos = {
   hero: {
     file: `hero-b.jpg`,
     shot: `A plaster archway opening onto a brass pendant, a pottery lamp on a burl console and oak-covered hills, warm evening light. Wide, with empty wall on the left for the headline`,
-    alt: `A plaster archway opening onto a brass pendant above a burl wood console, with a window onto oak-covered hills at sunset`,
+    alt: `A plaster archway opening onto a brass pendant and a lamp on a burl wood console, a window beyond onto oak-covered hills at sunset`,
   },
   before: {
     file: `before-plastic-switch-plate.jpg`,
@@ -403,7 +403,7 @@ export const surfacesPage = {
   heroPhoto: {
     file: `surfaces-hero.jpg`,
     shot: `Looking up into a room with a wallpapered ceiling in a soft botanical pattern, warm daylight. Portrait`,
-    alt: `A sitting room ceiling painted black with fine gold linework, a glass chandelier hanging at its center`,
+    alt: `A paneled sitting room under a black ceiling swirled with cream ribbons, a sculptural white chandelier above a marble fireplace`,
     concept: true,
   },
   intro: `Builder-grade homes are finished in flat paint and good intentions. Surfaces changes that, one wall, ceiling or stair at a time. Every paper, tile and finish comes from a maker or artist I've chosen, and every installation is done by trades I trust.`,
@@ -413,7 +413,7 @@ export const surfacesPage = {
       {
         title: `The Fifth Wall`,
         line: `Wallpapered and painted ceilings that change how a room feels the moment you walk in.`,
-        photo: { file: `surfaces-fifth-wall.jpg`, shot: `A dining room with a patterned wallpapered ceiling`, alt: `A sunlit garden room with botanical wallpaper running up the walls and across the ceiling`, concept: true },
+        photo: { file: `surfaces-fifth-wall.jpg`, shot: `A dining room with a patterned wallpapered ceiling`, alt: `A sunlit garden room papered in green botanicals up the walls and across the ceiling, above a black-and-cream checkerboard floor`, concept: true },
       },
       {
         title: `Unexpected Places`,

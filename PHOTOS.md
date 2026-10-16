@@ -136,3 +136,10 @@ After Dark = the uplit oak (close-up: the lantern path); Home band = the
 table under the lit oak; collection card = the moon gate.
 Unused but good, kept in Dropbox: the stone basin, mossy boulder, hillside
 reading nook, lantern by the hedge, the second uplit oak.
+
+**Enlarged 2026-10-16** (from the main Website Pics folder): `hero-b.jpg`
+is now 2560 × 1429 (a fresh render of the same archway), `surfaces-hero.jpg`
+1600 × 2000 and `surfaces-fifth-wall.jpg` 1200 × 1500. Still small and worth
+re-exporting larger: `home-fifth-wall.jpg` (1680 × 800, full width), the five
+large Mischief images and `mischief-and-mortar.jpg` (755 × 944), and
+`paper-and-plaster.jpg` (755 × 944).
