@@ -150,3 +150,5 @@ all six large Mischief images (`mischief-hero`, `-wallpaper`, `-drawer`,
 `home-fifth-wall.jpg` 2560 × 1429; `surfaces-handmade-tile.jpg` and
 `surfaces-murals.jpg` 1200 × 1500. `paper-and-plaster.jpg` followed at 1600 × 2000: every image on the site is
 now full size.
+
+**2026-10-16:** the last five More mischief cards are filled (tile message, neon, switch plate, living wall, garage), 1200 × 1200. No placeholders remain on the site.
