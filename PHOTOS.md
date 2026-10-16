@@ -92,5 +92,11 @@ already has its description and alt text in `content/site.ts` under
 | `mischief-and-mortar.jpg` | Mischief & Mortar collection (Home card + Collections page): a bronze fox knocker on a green door | Portrait 4:5, 1600 × 2000 |
 | `home-knocker.jpg` | Home page band, "Every home deserves a secret or two." | Square, 1200 × 1200 |
 
-Eighteen images in all. `home-knocker.jpg` can simply be a square crop of
-`mischief-knocker.jpg` if you'd rather not make another, which makes it seventeen.
+**Placed 2026-10-16** from Website Pics → Surfaces (the playful-side set):
+every row above except these five, which still show "Photo to come":
+`mischief-tile-message.jpg`, `mischief-neon.jpg`, `mischief-switch-plates.jpg`,
+`mischief-living-wall.jpg`, `mischief-garage.jpg`.
+`mischief-house-numbers.jpg` is a crop of the hand-knocker door with its
+brass "841"; swap in a dedicated house-number image whenever you have one.
+The source images are 944 pixels tall, so the portrait crops are 755 × 944:
+fine on phones, slightly soft on a big screen. Larger exports are welcome.
