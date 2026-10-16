@@ -8,9 +8,10 @@ export type PhotoSpec = { file: string; shot: string; alt: string; concept?: boo
 
 // "A look we can create": marks a rendering so it is never read as a
 // finished client project. Shown only once a real image is in place.
+// On small photos (under 15rem wide) it shrinks to one short line.
 function ConceptCaption() {
   return (
-    <span className="pointer-events-none absolute bottom-3 left-3 z-10 bg-paper/85 px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.16em] text-muted">
+    <span className="pointer-events-none absolute bottom-3 left-3 z-10 whitespace-nowrap bg-paper/85 px-2.5 py-1 text-[0.68rem] uppercase tracking-[0.16em] text-muted @max-[15rem]:bottom-1.5 @max-[15rem]:left-1.5 @max-[15rem]:px-1.5 @max-[15rem]:py-0.5 @max-[15rem]:text-[0.5rem] @max-[15rem]:tracking-[0.06em]">
       {conceptCaption}
     </span>
   );
@@ -55,7 +56,7 @@ export default function Photo({
     'absolute inset-0 transition-transform duration-[1400ms] ease-[cubic-bezier(0.2,0.65,0.2,1)] group-hover/photo:scale-[1.045] motion-reduce:transition-none motion-reduce:group-hover/photo:scale-100';
   if (photo.file) {
     return (
-      <div {...r} className={`group/photo relative overflow-hidden ${ratio} ${shape} ${className}`}>
+      <div {...r} className={`group/photo @container relative overflow-hidden ${ratio} ${shape} ${className}`}>
         <div className={zoom}>
           <Image src={`/photos/${photo.file}`} alt={photo.alt} fill sizes={sizes} priority={priority} className="object-cover" />
         </div>

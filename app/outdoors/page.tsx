@@ -64,7 +64,7 @@ export default function OutdoorsPage() {
                 tone={TONES[i]}
                 sizes="100vw"
               />
-              <div className="wrap mt-10 grid gap-8 sm:mt-14 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
+              <div className="wrap mt-10 grid gap-8 sm:mt-14 sm:grid-cols-[1fr_1.4fr] lg:grid-cols-[1fr_1.4fr_minmax(0,15rem)] lg:gap-14">
                 <div {...reveal(0)}>
                   <p className="text-[0.72rem] font-medium uppercase tracking-[0.22em] text-stone">
                     <span className="nums">{String(i + 1).padStart(2, '0')}</span> · {s.sense}
@@ -84,6 +84,15 @@ export default function OutdoorsPage() {
                     ))}
                   </ul>
                 </div>
+                {/* A closer look, beside the words. */}
+                <Photo
+                  photo={s.detail}
+                  reveal={2}
+                  ratio="aspect-[4/5]"
+                  tone="linen"
+                  sizes="(min-width: 1024px) 15rem, 60vw"
+                  className="w-2/3 max-w-xs sm:col-span-2 sm:w-1/3 lg:col-span-1 lg:w-full"
+                />
               </div>
             </article>
           ))}
@@ -101,6 +110,11 @@ export default function OutdoorsPage() {
             {c.mischief.eyebrow}
           </h2>
           <p className="mt-5 font-serif text-[1.5rem] leading-snug text-ink sm:text-[1.9rem]">{c.mischief.line}</p>
+          <div className="mx-auto mt-8 grid max-w-sm grid-cols-2 gap-4">
+            {c.mischief.photos.map((ph) => (
+              <Photo key={ph.file} photo={ph} ratio="aspect-square" tone="olive" sizes="12rem" />
+            ))}
+          </div>
           <span className="mt-6 inline-block text-sm text-moss underline decoration-lantern underline-offset-[6px] transition-colors group-hover:text-ink">
             {c.mischief.link} →
           </span>

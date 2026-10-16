@@ -122,3 +122,17 @@ full-bleed photos, so these need to be WIDE and LARGE: export at least
 
 On a phone the wide photos are cropped closer to the middle, so keep the
 main subject near the center.
+
+**Placed 2026-10-16** from Website Pics → Outdoors (20 images, 2752 px wide:
+sharp at full width). Every row above is filled, plus five close-ups beside
+the senses (`outdoors-water-detail.jpg`, `-music-detail`, `-secret-detail`,
+`-rooms-detail`, `-after-dark-detail`; portrait 4:5) and two squares in the
+"little mischief outside" strip (`outdoors-stone-fox.jpg`,
+`outdoors-tiny-door.jpg`). What went where: hero = the reflecting pool and
+oak; Water = the stone rill (close-up: rain chain); Music = the curved whisper
+bench (close-up: chimes); Secret Gardens = the hedge room (close-up: the
+hedge door); Outdoor Rooms = the copper fire bowl (close-up: garden shower);
+After Dark = the uplit oak (close-up: the lantern path); Home band = the
+table under the lit oak; collection card = the moon gate.
+Unused but good, kept in Dropbox: the stone basin, mossy boulder, hillside
+reading nook, lantern by the hedge, the second uplit oak.
