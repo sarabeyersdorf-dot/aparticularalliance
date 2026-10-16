@@ -148,5 +148,5 @@ large Mischief images and `mischief-and-mortar.jpg` (755 × 944), and
 all six large Mischief images (`mischief-hero`, `-wallpaper`, `-drawer`,
 `-doorbell`, `-knocker`, `mischief-and-mortar`) now 1600 × 2000;
 `home-fifth-wall.jpg` 2560 × 1429; `surfaces-handmade-tile.jpg` and
-`surfaces-murals.jpg` 1200 × 1500. Only `paper-and-plaster.jpg` (755 × 944)
-is still small.
+`surfaces-murals.jpg` 1200 × 1500. `paper-and-plaster.jpg` followed at 1600 × 2000: every image on the site is
+now full size.

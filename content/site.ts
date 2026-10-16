@@ -196,13 +196,13 @@ export const collections = [
     cardPhoto: {
       file: `paper-and-plaster.jpg`,
       shot: `A powder room with a softly patterned wallpapered ceiling and limewashed walls`,
-      alt: `A walk-in closet of warm wood shelving beneath a botanical wallpapered ceiling`,
+      alt: `A walnut walk-in closet beneath a ceiling papered in deep green botanicals with pale blossoms, a brass pendant over a green velvet bench`,
       concept: true,
     },
     photo: {
       file: `paper-and-plaster.jpg`,
       shot: `A powder room with a softly patterned wallpapered ceiling and limewashed walls`,
-      alt: `A walk-in closet of warm wood shelving beneath a botanical wallpapered ceiling`,
+      alt: `A walnut walk-in closet beneath a ceiling papered in deep green botanicals with pale blossoms, a brass pendant over a green velvet bench`,
       concept: true,
     },
   },
