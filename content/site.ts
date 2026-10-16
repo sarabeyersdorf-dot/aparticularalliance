@@ -428,7 +428,7 @@ export const surfacesPage = {
       {
         title: `Murals & Large Prints`,
         line: `Original, large-scale artwork made for one wall in one home.`,
-        photo: { file: `surfaces-murals.jpg`, shot: `A hand-painted landscape mural across one wall of a sitting room`, alt: `A double-height living room wall painted with an oversized botanical leaf mural`, concept: true },
+        photo: { file: `surfaces-murals.jpg`, shot: `A hand-painted landscape mural across one wall of a sitting room`, alt: `A living room wall painted floor to ceiling with a sweeping hand-drawn mural of overlapping arcs in charcoal on cream`, concept: true },
       },
       {
         title: `Plaster & Limewash`,
@@ -520,7 +520,7 @@ export const mischiefPage = {
       {
         title: `Custom Doorbells`,
         body: `The first thing a guest touches deserves better than a plastic button. Hand-cast bronze, carved stone, enamel or ceramic doorbells shaped as a quail, a leaf, a family initial or something only you would think of.`,
-        photo: { file: `mischief-doorbell.jpg`, shot: `A hand-cast bronze doorbell shaped as a California quail beside a front door. Portrait`, alt: `A hand-cast bronze doorbell shaped like a California quail, on an oak plate beside a front door`, concept: true },
+        photo: { file: `mischief-doorbell.jpg`, shot: `A hand-cast bronze doorbell shaped as a California quail beside a front door. Portrait`, alt: `A hand-cast bronze doorbell shaped like a California quail, perched on a carved leaf-shaped wood plate on a plaster wall beside a front door`, concept: true },
       },
       {
         title: `Custom Door Knockers`,

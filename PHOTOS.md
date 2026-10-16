@@ -143,3 +143,10 @@ is now 2560 × 1429 (a fresh render of the same archway), `surfaces-hero.jpg`
 re-exporting larger: `home-fifth-wall.jpg` (1680 × 800, full width), the five
 large Mischief images and `mischief-and-mortar.jpg` (755 × 944), and
 `paper-and-plaster.jpg` (755 × 944).
+
+**Enlarged again 2026-10-16** (Gemini, portrait 1696 × 2528 and wide 2752):
+all six large Mischief images (`mischief-hero`, `-wallpaper`, `-drawer`,
+`-doorbell`, `-knocker`, `mischief-and-mortar`) now 1600 × 2000;
+`home-fifth-wall.jpg` 2560 × 1429; `surfaces-handmade-tile.jpg` and
+`surfaces-murals.jpg` 1200 × 1500. Only `paper-and-plaster.jpg` (755 × 944)
+is still small.
